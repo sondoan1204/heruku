@@ -192,12 +192,5 @@ public class DonHangDAO {
         return list;
     }
 
-    public static void main(String[] args) throws SQLException {
-        DonHangDAO dao = new DonHangDAO();
-        //dao.insertCategory(new Category(new Date().getTime(), "ahih"));
-        for (CTHD ds : dao.getListCTHD(1)) {
-            System.out.println(ds.getTensanpham() + " - " + ds.getSoluong() + " - " + ds.getTongcong());
-        }
-
-    }
+   
 }

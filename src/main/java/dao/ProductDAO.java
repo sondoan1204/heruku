@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -607,20 +607,5 @@ public class ProductDAO {
         return false;
     }
 
-    public static void main(String[] args) throws SQLException {
-        ProductDAO dao = new ProductDAO();
-        System.out.println(dao.countSanPhamMoi());
-        //dao.insertCategory(new Category(new Date().getTime(), "ahih"));
-//        for (Product ds : dao.getListProduct()) {
-//            System.out.println(ds.getProductID() + " - " + ds.getProductName()+" - "+ds.getProductPrite()+" - "+ds.getProductDescription()+" - "+ds.getProductImagesFeature()
-//            +" - "+String.valueOf(ds.getProductSt())+" - "+String.valueOf(ds.getProductStTop()));
-//            
-//        Product ds = dao.getProduct(2);
-//        System.out.println(ds.getProductID() + " - " + ds.getProductName() + " - " + ds.getProductPrite() + " - " + ds.getProductDescription() + " - " + ds.getProductImagesFeature()
-//                + " - " + String.valueOf(ds.getProductSt()) + " - " + String.valueOf(ds.getProductStTop()));
-        //System.out.println(dao.deleteCategory(4));
-        //Customer ds1 = dao.getCustomer(1);
-        //System.out.println(ds1.getCustomerID() + " - " + ds1.getCustomerName()+" - "+ds1.getCustomerUser());
-        //System.out.println(ds1.getCategoryID() + " - " + ds1.getCategoryName() + " - " + String.valueOf(ds1.getCategorySt()));
-    }
+
 }
