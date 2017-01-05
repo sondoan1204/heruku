@@ -164,5 +164,14 @@ public class CategoryDAO {
         return false;
     }
 
-  
+    public static void main(String[] args) throws SQLException {
+        CategoryDAO dao = new CategoryDAO();
+        dao.insertCategory(new Category(new Date().getTime(), "ahih",true));
+//        for (Category ds : dao.getListCategory()) {
+//            System.out.println(ds.getCategoryID() + " - " + ds.getCategoryName());
+//            //System.out.println(dao.deleteCategory(4));
+//            Category ds1 = dao.getCategory(1);
+//            System.out.println(ds1.getCategoryID() + " - " + ds1.getCategoryName() + " - " + String.valueOf(ds1.getCategorySt()));
+//        }
+    }
 }

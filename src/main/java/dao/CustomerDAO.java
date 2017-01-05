@@ -133,5 +133,15 @@ public class CustomerDAO {
         }
         return false;
     }
-     
+     public static void main(String[] args) throws SQLException {
+        CustomerDAO dao = new CustomerDAO();
+        //dao.insertCategory(new Category(new Date().getTime(), "ahih"));
+        for (Customer ds : dao.getListCustomer()) {
+            System.out.println(ds.getCustomerID() + " - " + ds.getCustomerName()+" - "+ds.getCustomerUser());
+            //System.out.println(dao.deleteCategory(4));
+            Customer ds1 = dao.getCustomer(1);
+             System.out.println(ds1.getCustomerID() + " - " + ds1.getCustomerName()+" - "+ds1.getCustomerUser());
+            //System.out.println(ds1.getCategoryID() + " - " + ds1.getCategoryName() + " - " + String.valueOf(ds1.getCategorySt()));
+        }
+    }
 }

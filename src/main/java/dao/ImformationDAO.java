@@ -95,6 +95,10 @@ public class ImformationDAO {
         }
         return false;
     }
-     
+     public static void main(String[] args) throws SQLException {
+        ImformationDAO dao = new ImformationDAO();
+            Imformation ds=dao.getThongtin();
+             System.out.println(ds.getMota());
+        }
     
 }
