@@ -49,9 +49,9 @@
     <finalName>embeddedTomcatSample</finalName>
     <plugins>
         <plugin>
-            <groupId>org.apache.maven.plugin-tools</groupId>
-            <artifactId>maven-plugin-annotations</artifactId>
-            <version>3.4</version>
+            <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.2</version>
             <configuration>
                 <assembleDirectory>target</assembleDirectory>
                 <programs>
