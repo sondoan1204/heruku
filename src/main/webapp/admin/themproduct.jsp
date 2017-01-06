@@ -1,11 +1,7 @@
-<%-- 
-    Document   : themproduct
-    Created on : Dec 4, 2016, 3:30:12 PM
-    Author     : SONPC
---%>
+<%@page import="model.Admin"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.Category"%>
+<%@page import="model.category"%>
 <%@page import="dao.CategoryDAO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,20 +15,20 @@
         <script src="../ckeditor/ckeditor.js" type="text/javascript"></script>
 
         <!-- Bootstrap Core CSS -->
-        <link href="${root}/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../admin/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="${root}/admin/css/sb-admin.css" rel="stylesheet">
+        <link href="../admin/css/sb-admin.css" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
-        <link href="${root}/admin/js/plugins/morris/morris.css" rel="stylesheet">
+        <link href="../admin/js/plugins/morris/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="${root}/admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Thêm Sản phẩm mới</title>
 
-        <script src="${root}/admin/js/jquery-1.11.0.js" type="text/javascript"></script>
+        <script src="../admin/js/jquery-1.11.0.js" type="text/javascript"></script>
         <script type="text/javascript">
             $('#submit').click(function () {
                 //kiem tra trinh duyet co ho tro File API
@@ -61,10 +57,14 @@
             });
         </script>
     </head>
-    <body>
-        <%
-            CategoryDAO categoryDAO = new CategoryDAO();
-            ArrayList<Category> listLoai = categoryDAO.getListLoai();
+    <body><%
+        Admin users = (Admin) session.getAttribute("admin");
+        if (users == null) {
+            response.sendRedirect("dangnhap.jsp");
+
+        }
+        CategoryDAO categoryDAO = new CategoryDAO();
+        ArrayList<category> listLoai = categoryDAO.getListLoai();
         %>
         <div id="wrapper">
 
@@ -85,7 +85,7 @@
                 <div id="page-wrapper">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="/ShopSW/ManagerProductServlet" method="post" enctype="multipart/form-data">
+                            <form action="../ManagerProductServlet" method="post" enctype="multipart/form-data">
                                 <div class="panel panel-success" >
                                     <div class="panel-heading">
                                         <h3 class="panel-title"> Điền thông tin sản phẩm</h3>
@@ -97,14 +97,11 @@
                                                     <label>Tên sản phẩm</label>
                                                     <input type="text" class="form-control" name="tenSanpham" placeholder="Nhập tên Sản phẩm" required>
                                                 </div>
-
-
-
                                                 <div class="form-group">
                                                     <label>Chọn Loại</label>
                                                     <select class="form-control" name="maLoai">
                                                     <%
-                                                        for (Category category : listLoai) {
+                                                        for (category category : listLoai) {
                                                     %>
                                                     <option value="<%=category.getCategoryID()%>"><%=category.getCategoryName()%></option>
                                                     <%}%>
@@ -155,9 +152,6 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-7">
-
-
-
                                             <div class="form-group">
                                                 <label>Mô tả</label>
                                                 <textarea class="form-control" name="mota" id="noiDung"></textarea>
@@ -165,12 +159,10 @@
                                                     CKEDITOR.replace('noiDung', {width: '600px', height: '300px'});
                                                 </script>
                                             </div>
-
-
                                             <button type="reset" class="btn btn-default">Nhập lại</button>
                                             <input id="submit" type="hidden" name="command" value="insert" >
                                             <input id="submit" type="submit" class="btn btn-default" value="Lưu dữ liệu" >
-                                            <a href="${root}/admin/quanlyproduct.jsp?pages=1"  class="btn btn-default">Hủy bỏ</a>
+                                            <a href="../admin/quanlyproduct.jsp?pages=1"  class="btn btn-default">Hủy bỏ</a>
                                         </div>
                                     </div>
                                 </div>

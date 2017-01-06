@@ -1,8 +1,5 @@
-<%-- 
-    Document   : themtags
-    Created on : Dec 12, 2016, 7:54:08 PM
-    Author     : SONPC
---%>
+
+<%@page import="model.Admin"%>
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="model.Product"%>
@@ -18,30 +15,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <c:set var="root" value="${pageContext.request.contextPath}"/>
-
-
-        <link href="${root}/admin/js/bootstrap-tagsinput.css" rel="stylesheet" type="text/css"/>
-
-
-        <!-- Bootstrap Core CSS -->
-        <link href="${root}/admin/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="${root}/admin/css/sb-admin.css" rel="stylesheet">
-
-
-
-        <!-- Custom Fonts -->
-        <link href="${root}/admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../admin/js/bootstrap-tagsinput.css" rel="stylesheet" type="text/css"/>
+        <link href="../admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../admin/css/sb-admin.css" rel="stylesheet">
+        <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Thêm tags sàn phẩm</title>
-
     </head>
-    <body>
-        <script src="${root}/admin/js/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <script src="${root}/admin/js/bootstrap-tagsinput-angular.js" type="text/javascript"></script>
+    <body><%
+        Admin users = (Admin) session.getAttribute("admin");
+        if (users == null) {
+            response.sendRedirect("dangnhap.jsp");
+
+        }
+        %>
+        <script src="../admin/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="../admin/js/bootstrap-tagsinput-angular.js" type="text/javascript"></script>
         <script src="../admin/js/bootstrap-tagsinput.js" type="text/javascript"></script>
         <div id="wrapper">
             <%String url = request.getRequestURI() + "?" + request.getQueryString();
@@ -74,7 +64,6 @@
                                 ProductDAO productDAO = new ProductDAO();
                                 Product c = productDAO.getProduct(idsps);
                                 NumberFormat formatter = new DecimalFormat("###,###");
-
                             %>
                             <div class="panel-body">
                                 <div class="form-group">
@@ -86,14 +75,14 @@
                                     <input class="form-control" value="<%=formatter.format(c.getProductPrite())%>" readonly="">
                                     <span class="input-group-addon">VNĐ</span>
                                 </div>
-                                    <div class="text-right">
-                                        <a href="${root}/admin/suaproduct.jsp?command=update&ID_Product=<%=c.getProductID()%>">Sửa thông tin sản phẩm <i class="fa fa-arrow-circle-right"></i></a>
+                                <div class="text-right">
+                                    <a href="../admin/suaproduct.jsp?command=update&ID_Product=<%=c.getProductID()%>">Sửa thông tin sản phẩm <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <form action="${root}/TagsServlet" method="post" role="form">
+                        <form action="../TagsServlet" method="post" role="form">
                             <input type="text" value="<%=url%>" name="url12" hidden="">
                             <input type="text" value="<%=idsp%>" name="idsp" hidden="">
                             <div class="panel panel-success" >
@@ -106,12 +95,10 @@
                                     </div>
                                     <input type="hidden" name="command" value="insert">
                                     <input type="submit" class="btn btn-default" value="Lưu dữ liệu" >
-                                    <a href="${root}/admin/seoproduct.jsp?pages=1"  class="btn btn-default">Hủy bỏ</a>
+                                    <a href="../admin/seoproduct.jsp?pages=1"  class="btn btn-default">Hủy bỏ</a>
                                 </div>
                             </div>
                         </form>
-
-
                     </div>
                     <div class="col-lg-4">
                         <div class="panel panel-success" >
@@ -121,23 +108,17 @@
                                 long id = Long.valueOf(request.getParameter("ID_Product"));
                                 TagsDAO tagsDAO = new TagsDAO();
                                 ArrayList<CTTags> listTags = tagsDAO.getListTags(id);
-
                             %>
-
                             <div class="panel-body">
                                 <%    for (CTTags tags : listTags) {
-
-
                                 %>
-                                <span class="badge"><%=tags.getKeyword()%> <a href="${root}/TagsServlet?command=delete&ID_Tags=<%=tags.getId_tags()%>&ID_Product=<%=id%>&Url12=<%=url%>"  style="color: #FFF">x</a></span>
+                                <span class="badge"><%=tags.getKeyword()%> <a href="../TagsServlet?command=delete&ID_Tags=<%=tags.getId_tags()%>&ID_Product=<%=id%>&Url12=<%=url%>"  style="color: #FFF">x</a></span>
                                 <%}%>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
     </body>
 </html>

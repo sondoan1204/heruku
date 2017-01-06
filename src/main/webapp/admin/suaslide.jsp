@@ -1,10 +1,5 @@
-<%-- 
-    Document   : suaslide
-    Created on : Dec 8, 2016, 2:00:56 PM
-    Author     : SONPC
---%>
-
-<%@page import="model.Slide"%>
+<%@page import="model.Admin"%>
+<%@page import="model.slide"%>
 <%@page import="dao.SlideDAO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,25 +14,31 @@
         <script src="../ckeditor/ckeditor.js" type="text/javascript"></script>
 
         <!-- Bootstrap Core CSS -->
-        <link href="${root}/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../admin/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="${root}/admin/css/sb-admin.css" rel="stylesheet">
+        <link href="../admin/css/sb-admin.css" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
-        <link href="${root}/admin/ss/plugins/morris.css" rel="stylesheet">
+        <link href="../admin/ss/plugins/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="${root}/admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sửa thông tin slide</title>
 
     </head>
-    <body>
+    <body><%
+        Admin users = (Admin) session.getAttribute("admin");
+        if (users == null) {
+            response.sendRedirect("dangnhap.jsp");
+
+        }
+        %>
         <%
- long id = Long.valueOf(request.getParameter("ID_Slide"));
+            long id = Long.valueOf(request.getParameter("ID_Slide"));
             SlideDAO slideDAO = new SlideDAO();
-            Slide c = slideDAO.getThongtin(id);
+            slide c = slideDAO.getThongtin(id);
 
         %>
         <div id="wrapper">
@@ -60,28 +61,28 @@
                     <div class="row">
                         <div class="col-lg-12">
 
-                            <form action="${root}/ManagerSlideServlet" method="post" enctype="multipart/form-data">
+                            <form action="../ManagerSlideServlet" method="post" enctype="multipart/form-data">
 
-                                <div class="panel panel-success" >
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title"> Thông tin slide </h3>
-                                    </div>
-                                    <div class="row"> 
-                                        <div class="col-lg-6">
-                                            <div class="panel-body">
-                                             
-                                                
-                                                <input type="hidden" class="form-control" name="idslide" value="<%=c.getSlideID()%>" >
-                                            
-                                                <div class="form-group">
-                                                    <label>Hình ảnh</label>
-                                                    <input type="file" class="form-control" name="img12">
-                                                    <input type="hidden" class="form-control" name="tenImg" value="<%=c.getImage()%>" >
-                                                    <img src="${root}/upload/<%=c.getImage()%>" style="width: 506px;height: 200px">
+                            <div class="panel panel-success" >
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"> Thông tin slide </h3>
+                                </div>
+                                <div class="row"> 
+                                    <div class="col-lg-6">
+                                        <div class="panel-body">
+
+
+                                            <input type="hidden" class="form-control" name="idslide" value="<%=c.getIDslide()%>" >
+
+                                            <div class="form-group">
+                                                <label>Hình ảnh</label>
+                                                <input type="file" class="form-control" name="img12">
+                                                <input type="hidden" class="form-control" name="tenImg" value="<%=c.getAnh()%>" >
+                                                <img src="../images/<%=c.getAnh()%>" style="width: 506px;height: 200px">
                                             </div>
 
                                             <label>DisplayOrder</label>
-                                            <input type="number" class="form-control" name="tenDisplay" value="<%=c.getDisplayorder()%>">
+                                            <input type="number" class="form-control" name="tenDisplay" value="<%=c.getThutu()%>">
                                             <div class="form-group">
                                                 <label>Link</label>
                                                 <input type="text" class="form-control" name="tenLink" value="<%=c.getLink()%>">
@@ -90,42 +91,38 @@
                                                 <label>Trạng thái sản phẩm</label>
                                                 </br>
                                                 <label class="checkbox-inline">
-                                                    <input type="checkbox" name="trangthai" value="true" <%if (c.getSt() == true) {%>checked<%}%>> trạng thái
+                                                    <input type="checkbox" name="trangthai" value="true" <%if (c.getTrangthai() == true) {%>checked<%}%>> trạng thái
                                                 </label>    
                                             </div>
 
 
                                         </div>
                                     </div>
-                                <div class="panel-body">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label>Mô tả</label>
-                                            <textarea class="form-control" name="tenDescription" id="noiDung"><%=c.getDescription()%></textarea>
-                                            <script type="text/javascript" language="javascript">
-                                                CKEDITOR.replace('noiDung', {width: '500px', height: '200px'});
-                                            </script>
-                                        </div>
+                                    <div class="panel-body">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Mô tả</label>
+                                                <textarea class="form-control" name="tenDescription" id="noiDung"><%=c.getMota()%></textarea>
+                                                <script type="text/javascript" language="javascript">
+                                                    CKEDITOR.replace('noiDung', {width: '500px', height: '200px'});
+                                                </script>
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
-                                
+
 
                             </div>
 
                             <input type="hidden" name="command" value="update">
-                            <input type="hidden" name="ID_Slide" value="<%=c.getSlideID()%>">
+                            <input type="hidden" name="ID_Slide" value="<%=c.getIDslide()%>">
                             <input type="submit" class="btn btn-default" value="Lưu dữ liệu" >
-                            <a href="${root}/admin/quanlyslider.jsp"  class="btn btn-default">Hủy bỏ</a>
+                            <a href="../admin/quanlyslider.jsp"  class="btn btn-default">Hủy bỏ</a>
                         </form>
                     </div>
-
                 </div>
-
-                
             </div> 
         </div>
-
     </body>
 </html>

@@ -1,10 +1,6 @@
-<%-- 
-    Document   : quanlyslider
-    Created on : Dec 8, 2016, 10:26:41 PM
-    Author     : SONPC
---%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="model.Slide"%>
+<%@page import="model.slide"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.SlideDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,16 +15,16 @@
 
 
         <!-- Bootstrap Core CSS -->
-        <link href="${root}/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../admin/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="${root}/admin/css/sb-admin.css" rel="stylesheet">
+        <link href="../admin/css/sb-admin.css" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
-        <link href="${root}/admin/ss/plugins/morris.css" rel="stylesheet">
+        <link href="../admin/ss/plugins/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="${root}/admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quản trị</title>
         <%
@@ -59,12 +55,12 @@
                 </div>
 				<%
         SlideDAO categoryDAO = new SlideDAO ();
-        ArrayList<Slide> listCategory = categoryDAO.getListThongtin();
+        ArrayList<slide> listCategory = categoryDAO.getListThongtin();
     %>
                 <div id="page-wrapper">
                     <div class="row">
                        <div class="col-lg-12">
-					   <a href="${root}/admin/themslider.jsp" class="btn btn-default">Thêm ảnh slider</a>
+					   <a href="../admin/themslider.jsp" class="btn btn-default">Thêm ảnh slider</a>
                     <table class="table table-bordered table-hover">
 
                         <tr >
@@ -80,7 +76,7 @@
 
                         <%
                             int count = 0;
-                            for (Slide category : listCategory) {
+                            for (slide category : listCategory) {
                                 count++;
                               
                         %>
@@ -90,15 +86,15 @@
                             <td >                    <center>
                             <%=count%></center></td>
                         
-                    <td><center><img src="${root}/upload/<%=category.getImage()%>" style="width: 460px;height: 175px"></center></td>
-                        <td><center><%=category.getDisplayorder()%></center></td>
+                    <td><center><img src="../images/<%=category.getAnh()%>" style="width: 460px;height: 175px"></center></td>
+                        <td><center><%=category.getThutu()%></center></td>
                         <td><center><%=category.getLink()%></center></td>
-                        <td><center><%=category.getDescription()%></center></td>
-                    <td><center><% if(category.getSt()==true){%> Đang sử dụng <%}%></center></td>
+                        <td><center><%=category.getMota()%></center></td>
+                    <td><center><% if(category.getTrangthai()==true){%> Đang sử dụng <%}%></center></td>
                         <td >
                         <center>
-                            <a href="${root}/admin/suaslide.jsp?command=update&ID_Slide=<%=category.getSlideID()%>">Sửa</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="${root}/ManagerSlideServlet?command=delete&ID_Slide=<%=category.getSlideID()%>">Xóa</a>
+                            <a href="../admin/suaslide.jsp?command=update&ID_Slide=<%=category.getIDslide()%>">Sửa</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="../ManagerSlideServlet?command=delete&ID_Slide=<%=category.getIDslide()%>">Xóa</a>
                         </center>
                         </td>
                         </tr>
@@ -108,7 +104,7 @@
                 </div>
             </div>
         </div>
-        </div>
+
 
     </body>
 </html>

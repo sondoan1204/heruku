@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ChonLogin
-    Created on : Dec 15, 2016, 12:07:06 AM
-    Author     : SONPC
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,19 +9,19 @@
         <!-- Meta-Tags -->
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <!-- //Meta-Tags -->
-        <link href="${root}/admin/css/mdb.min.css" rel="stylesheet" type="text/css"/>
-        <link href="${root}/admin/css/mdb.css" rel="stylesheet" type="text/css"/>
-        <script src="${root}/admin/js/tether.min.js" type="text/javascript"></script>
-        <script src="${root}/admin/js/tether.js" type="text/javascript"></script>
-        <script src="${root}/admin/js/mdb.min.js" type="text/javascript"></script>
-        <script src="${root}/admin/js/mdb.js" type="text/javascript"></script>
-        <script src="${root}/admin/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-        <script src="${root}/admin/js/jquery-3.1.1.js" type="text/javascript"></script>
-        <script src="${root}/admin/js/jquery-2.2.3.min.js" type="text/javascript"></script>
-        <script src="${root}/admin/js/jquery-2.2.3.js" type="text/javascript"></script>
+        <link href="../admin/css/mdb.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../admin/css/mdb.css" rel="stylesheet" type="text/css"/>
+        <script src="../admin/js/tether.min.js" type="text/javascript"></script>
+        <script src="../admin/js/tether.js" type="text/javascript"></script>
+        <script src="../admin/js/mdb.min.js" type="text/javascript"></script>
+        <script src="../admin/js/mdb.js" type="text/javascript"></script>
+        <script src="../admin/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="../admin/js/jquery-3.1.1.js" type="text/javascript"></script>
+        <script src="../admin/js/jquery-2.2.3.min.js" type="text/javascript"></script>
+        <script src="../admin/js/jquery-2.2.3.js" type="text/javascript"></script>
         <!-- Custom-Styleheet-Links -->
-        <link href="${root}/admin/css_login/animate-custom.css" rel="stylesheet" type="text/css"/>
-        <link href="${root}/admin/css_login/style.css" rel="stylesheet" type="text/css"/>
+        <link href="../admin/css_login/animate-custom.css" rel="stylesheet" type="text/css"/>
+        <link href="../admin/css_login/style.css" rel="stylesheet" type="text/css"/>
         <!-- //Custom-Styleheet-Links -->
 
         <!-- Fonts -->
@@ -48,7 +42,7 @@
         <div class="container w3layouts agileits">
 
             <div class="content-left w3layouts agileits">
-                <img src="${root}/admin/images_login/background.jpg" alt="W3layouts Agileits">
+                <img src="../admin/images_login/background.jpg" alt="W3layouts Agileits">
                 <p>Plan your next dream trip. Select your destination and leave the rest to us.</p>
                 <a class="more w3layouts agileits" href="#">LEARN MORE</a>
 
@@ -86,14 +80,14 @@
                                     </p>
                                     <div class="clear"></div>
                                 </form>
-                                <!--                                <div class="social-icons w3layouts agileits">
+                                                                <div class="social-icons w3layouts agileits">
                                                                     <p>OR USE YOUR SOCIAL ACCOUNTS</p>
                                                                     <ul>
                                                                         <li class="fb w3ls w3layouts agileits"><a href="#"><span class="icons w3layouts agileits"></span><span class="text w3layouts agileits">Facebook</span></a></li>
                                                                         <li class="twt w3ls w3layouts agileits"><a href="#"><span class="icons w3layouts agileits"></span><span class="text w3layouts agileits">Twitter</span></a></li>
                                                                         <div class="clear"></div>
                                                                     </ul>
-                                                                </div>-->
+                                                                </div>
                                 <div class="clear"></div>
                             </div>
                            
@@ -104,10 +98,10 @@
                                     <div  >
                                         <img src="images_login/GitHub-Mark-64px.png" alt=""/>
                                         <img src="images_login/GitHub-Mark-Light-64px.png" alt=""/>
-                                        <a href="https://github.com/login/oauth/authorize?client_id=02edf4e25d434e53b086&redirect_uri=http://localhost:8080/ShopSW/Oauth2git&scope=user"><img src="images_login/GitHub_Logo.png" style="width: 200px;height: 100%"/></a>
+                                        <a href="https://github.com/login/oauth/authorize?client_id=02edf4e25d434e53b086&redirect_uri=http://localhost:8080/Sandwich/Oauth2git&scope=user"><img src="images_login/GitHub_Logo.png" style="width: 200px;height: 100%"/></a>
                                     </div>
                                     <div >
-                                        <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/ShopSW/OAuth2Callback&response_type=code&client_id=1072517011559-98o65aqld7in2j3du772p3uio5le3a2i.apps.googleusercontent.com&approval_prompt=force">
+                                        <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/Sandwich/OAuth2Callback&response_type=code&client_id=1072517011559-98o65aqld7in2j3du772p3uio5le3a2i.apps.googleusercontent.com&approval_prompt=force">
                                             <img src="images_login/new-google-favicon-logo.png" style="width: 100px;height: 100%"/>
                                             
                                         </a>  

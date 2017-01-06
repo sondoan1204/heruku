@@ -1,13 +1,9 @@
-<%-- 
-    Document   : quanlyproduct
-    Created on : Dec 3, 2016, 10:37:25 PM
-    Author     : SONPC
---%>
+<%@page import="model.Admin"%>
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="dao.CategoryDAO"%>
-<%@page import="model.Category"%>
+<%@page import="model.category"%>
 <%@page import="model.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.ProductDAO"%>
@@ -21,18 +17,18 @@
 
 
         <c:set var="root" value="${pageContext.request.contextPath}"/>
-        <link href="${root}/admin/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="../admin/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <!-- Bootstrap Core CSS -->
-        <link href="${root}/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../admin/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="${root}/admin/css/sb-admin.css" rel="stylesheet">
+        <link href="../admin/css/sb-admin.css" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
-        <link href="${root}/admin/css/plugins/morris.css" rel="stylesheet">
+        <link href="../admin/css/plugins/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="${root}/admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quản Lý sản phẩm</title>
     </head>
@@ -54,6 +50,12 @@
             }
             ArrayList<Product> listProduct = productDAO.getListProduct(firstResult, maxResult);
         %>
+        <%
+            Admin users = (Admin) session.getAttribute("admin");
+            if (users == null) {
+                response.sendRedirect("dangnhap.jsp");
+            }
+        %>
         <div id="wrapper">
 
             <jsp:include page="menu.jsp"></jsp:include>
@@ -71,32 +73,32 @@
                     </ol>
                 </div>
                 <div id="page-wrapper">
+                    <a href="../admin/themproduct.jsp">Thêm sản phẩm mới</a>
+                    <div class="row">
 
-                    <a href="${root}/admin/themproduct.jsp">Thêm sản phẩm mới</a>
-                <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-bordered table-hover">
 
-                    <div class="col-lg-12">
-                        <table class="table table-bordered table-hover">
+                                <tr >
+                                    <th >STT</th>
+                                    <th >Mã SP</th>
+                                    <th >Mã loại</th>
+                                    <th >Tên sản phẩm</th>
+                                    <th >Giá bán</th>
+                                    <th >Giá Sale</th>
+                                    <th >Mô tả ngắn</th>
+                                    <th >Hình</th>
+                                    <th >Trạng thái</th>
+                                    <th>Tùy chọn</th>
+                                </tr>
 
-                            <tr >
-                                <th >STT</th>
-                                <th >Mã SP</th>
-                                <th >Mã loại</th>
-                                <th >Tên sản phẩm</th>
-                                <th >Giá</th>
-                                <th >Giá khuyến mãi</th>
-                                <th >Mô tả ngắn</th>
-                                <th >Hình</th>
-                                <th >Trạng thái</th>
-                                <th>Tùy chọn</th>
-                            </tr>
-
-                            <%                            int count = 0;
+                            <%
+                                int count = 0;
                                 NumberFormat formatter = new DecimalFormat("###,###");
                                 for (Product product : listProduct) {
                                     count++;
                                     CategoryDAO categoryDAO = new CategoryDAO();
-                                    Category c = categoryDAO.getCategory(product.getCategoryID());
+                                    category c = categoryDAO.getCategory(product.getCategoryID());
                             %>
 
                             <tr <%if (product.getProductSt() == false) {%>class="danger"<%}%>>
@@ -107,7 +109,7 @@
                             <td><center><%=c.getCategoryName()%></center></td>
                             <td><center><%=product.getProductName()%></center></td>
                             <td><center><%= formatter.format(product.getProductPrite())%></center></td>
-                            <td><center><%=product.getProductPromotionPrice()%></center></td>
+                            <td><center><%=formatter.format(product.getProductPromotionPrice())%></center></td>
                             <td><center><%=product.getProductShortDescription()%></center></td>
                             <td><center><%=product.getProductImagesFeature()%></center></td>
                             <td><center><%
@@ -115,39 +117,30 @@
                                 %>
                                 <fieldset id="<%=count%>" disabled="">
                                     <label class="radio-inline">
-                                        <input type="radio" name="<%=count%>"  checked>Hiện
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="<%=count%>"   >Ẩn
+                                        <input type="radio" name="<%=count%>"  checked>Hiển thị
                                     </label>
                                 </fieldset>
                                 <%} else {%>
                                 <fieldset id="<%=count%>" disabled="">
                                     <label class="radio-inline">
-                                        <input type="radio" name="<%=count%>"  >Hiện
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="<%=count%>"checked >Ẩn
+                                        <input type="radio" name="<%=count%>"  >Hiển thị
                                     </label>
                                 </fieldset>
                                 <%}%></center></td>
                             <td >
                             <center>
                                 <%if (product.getProductSt() == true) {%>
-                                <a href="${root}/admin/suaproduct.jsp?command=update&ID_Product=<%=product.getProductID()%>">Sửa</a>&nbsp;|
-                                <a href="${root}/ManagerProductServlet?command=delete&ID_Product=<%=product.getProductID()%>&URL1204=<%=url%>">Xóa</a>
+                                <a href="../admin/suaproduct.jsp?command=update&ID_Product=<%=product.getProductID()%>">Sửa</a>&nbsp;|
+                                <a href="../ManagerProductServlet?command=delete&ID_Product=<%=product.getProductID()%>&URL1204=<%=url%>">Xóa</a>
                                 <%} else {%>
-                                <a href="${root}/ManagerProductServlet?command=khoiphuc&ID_Product=<%=product.getProductID()%>&URL1204=<%=url%>">Khôi phục</a>
+                                <a href="../ManagerProductServlet?command=khoiphuc&ID_Product=<%=product.getProductID()%>&URL1204=<%=url%>">Khôi phục</a>
                                 <%}%>
                             </center>
                             </td>
                             </tr>
                             <%}%>
-
                         </table>
-
                     </div>
-
                 </div>
             </div>
             <div id="page-wrapper">
@@ -158,10 +151,7 @@
                     <%}%>
                     <a <%if (pages + 1 > (total / 20)) {%> href="#"<%} else%>href="quanlyproduct.jsp?pages=<%=pages+1%>" class="btn btn-default">>></a>
                 </div>
-
             </div>
         </div>
-
-
     </body>
 </html>

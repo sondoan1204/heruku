@@ -1,10 +1,7 @@
-<%-- 
-    Document   : quanlycategory
-    Created on : Dec 2, 2016, 9:58:09 PM
-    Author     : SONPC
---%>
+
+<%@page import="model.Admin"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="model.Category"%>
+<%@page import="model.category"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.CategoryDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -20,23 +17,30 @@
         <c:set var="root" value="${pageContext.request.contextPath}"/>
 
         <!-- Bootstrap Core CSS -->
-        <link href="${root}/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../admin/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="${root}/admin/css/sb-admin.css" rel="stylesheet">
+        <link href="../admin/css/sb-admin.css" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
-        <link href="${root}/admin/css/plugins/morris.css" rel="stylesheet">
+        <link href="../admin/css/plugins/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="${root}/admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quản Lý danh mục</title>
     </head>
     <body>
         <%
             CategoryDAO categoryDAO = new CategoryDAO();
-            ArrayList<Category> listCategory = categoryDAO.getListCategory();
+            ArrayList<category> listCategory = categoryDAO.getListCategory();
+        %>
+        <%
+            Admin users = (Admin) session.getAttribute("admin");
+            if (users == null) {
+                response.sendRedirect("dangnhap.jsp");
+
+            }
         %>
         <div id="wrapper">
 
@@ -56,53 +60,45 @@
                 </div>
                 <div id="page-wrapper">
 
-                    <a href="${root}/admin/themcategory.jsp">Thêm danh mục</a>
-                <div class="row">
+                    <a href="../admin/themcategory.jsp">Thêm danh mục</a>
+                    <div class="row">
 
-                    <div class="col-lg-9">
-                        <table class="table table-bordered table-hover">
-
-                            <tr >
-                                <th >STT</th>
-                                <th >Mã danh mục</th>
-                                <th >Tên danh mục</th>
-                                <th >tình trạng</th>
-                                <th>Tùy chọn</th>
-                            </tr>
-
+                        <div class="col-lg-9">
+                            <table class="table table-bordered table-hover">
+                                <tr >
+                                    <th >STT</th>
+                                    <th >Mã danh mục</th>
+                                    <th >Tên danh mục</th>
+                                    <th >tình trạng</th>
+                                    <th>Tùy chọn</th>
+                                </tr>
                             <%
                                 int count = 0;
-                                for (Category category : listCategory) {
+                                for (category category : listCategory) {
                                     count++;
 
                             %>
-
                             <tr <%if (category.getCategorySt() == false) {%>class="danger"<%}%>>
-
-                                <td >                    <center>
-                                <%=count%></center></td>
+                            <td ><center><%=count%></center></td>
                             <td ><center><%=category.getCategoryID()%></center></td>
                             <td><center><%=category.getCategoryName()%></center></td>
-                            <td><center><%if (category.getCategorySt() == false) {%>Đã xoá<%}else{%>Đang sử dụng<%}%></center></td>
+                            <td><center><%if (category.getCategorySt() == false) {%>Đã xoá<%} else {%>Đang sử dụng<%}%></center></td>
                             <td >
                             <center>
                                 <%if (category.getCategorySt() == true) {%>
-                                <a href="${root}/admin/suacategory.jsp?command=update&ID_Category=<%=category.getCategoryID()%>">Sửa</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="${root}/ManagerCategoryServlet?command=delete&ID_Category=<%=category.getCategoryID()%>">Xóa</a>
+                                <a href="../admin/suacategory.jsp?command=update&ID_Category=<%=category.getCategoryID()%>">Sửa</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="../ManagerCategoryServlet?command=delete&ID_Category=<%=category.getCategoryID()%>">Xóa</a>
                                 <%} else {%>
-                                <a href="${root}/ManagerCategoryServlet?command=khoiphuc&ID_Category=<%=category.getCategoryID()%>">Khôi phục</a>
+                                <a href="../ManagerCategoryServlet?command=khoiphuc&ID_Category=<%=category.getCategoryID()%>">Khôi phục</a>
                                 <%}%>
                             </center>
                             </td>
                             </tr>
                             <%}%>
-
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </body>
 </html>

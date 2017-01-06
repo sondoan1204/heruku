@@ -4,6 +4,7 @@
     Author     : SONPC
 --%>
 
+<%@page import="model.Admin"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,16 +18,16 @@
 
 
         <!-- Bootstrap Core CSS -->
-        <link href="${root}/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../admin/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="${root}/admin/css/sb-admin.css" rel="stylesheet">
+        <link href="../admin/css/sb-admin.css" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
-        <link href="${root}/admin/ss/plugins/morris.css" rel="stylesheet">
+        <link href="../admin/ss/plugins/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="${root}/admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quản trị</title>
         <%
@@ -38,7 +39,13 @@
 
     </head>
     <body>
+        <%
+            Admin users = (Admin) session.getAttribute("admin");
+            if (users == null) {
+                response.sendRedirect("dangnhap.jsp");
 
+            }
+        %>
         <div id="wrapper">
 
             <jsp:include page="menu.jsp"></jsp:include>
@@ -59,7 +66,7 @@
                     <div class="row">
                         <div class="col-lg-4"></div>
                         <div class="col-lg-4">
-                            <form action="/ShopSW/ManagerCategoryServlet" method="post" role="form">
+                            <form action='../ManagerCategoryServlet' method='post' role="form">
 
                                 <div class="panel panel-success" >
                                     <div class="panel-heading">
@@ -70,15 +77,12 @@
                                     <br>
                                     <input type="hidden" name="command" value="insert">
                                     <input type="submit" class="btn btn-default" value="Lưu dữ liệu" >
-                                    <a href="${root}/ShopSW/admin/quanlycategory.jsp"  class="btn btn-default">Hủy bỏ</a>
+                                    <a href="/admin/quanlycategory.jsp"  class="btn btn-default">Hủy bỏ</a>
                                 </div>
-
-                        </form></div>
-                    <div class="col-lg-4"></div>
+                        </form>
+                    </div>
                 </div> 
             </div>
         </div>
-
-
     </body>
 </html>

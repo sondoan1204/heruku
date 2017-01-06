@@ -17,8 +17,8 @@
         <!-- //Meta-Tags -->
 
         <!-- Custom-Styleheet-Links -->
-        <link href="${root}/admin/css_login/animate-custom.css" rel="stylesheet" type="text/css"/>
-        <link href="${root}/admin/css_login/style.css" rel="stylesheet" type="text/css"/>
+        <link href="../admin/css_login/animate-custom.css" rel="stylesheet" type="text/css"/>
+        <link href="../admin/css_login/style.css" rel="stylesheet" type="text/css"/>
         <!-- //Custom-Styleheet-Links -->
 
         <!-- Fonts -->
@@ -41,7 +41,7 @@
         <div class="container w3layouts agileits">
 
             <div class="content-left w3layouts agileits">
-                <img src="${root}/admin/images_login/background.jpg" alt="W3layouts Agileits">
+                <img src="../admin/images_login/background.jpg" alt="W3layouts Agileits">
                 <p>Plan your next dream trip. Select your destination and leave the rest to us.</p>
                 <a class="more w3layouts agileits" href="#">LEARN MORE</a>
                 <div><a
@@ -83,45 +83,27 @@
                                     </p>
                                     <div class="clear"></div>
                                 </form>
-<!--                                <div class="social-icons w3layouts agileits">
-                                    <p>OR USE YOUR SOCIAL ACCOUNTS</p>
-                                    <ul>
-                                        <li class="fb w3ls w3layouts agileits"><a href="#"><span class="icons w3layouts agileits"></span><span class="text w3layouts agileits">Facebook</span></a></li>
-                                        <li class="twt w3ls w3layouts agileits"><a href="#"><span class="icons w3layouts agileits"></span><span class="text w3layouts agileits">Twitter</span></a></li>
-                                        <div class="clear"></div>
-                                    </ul>
-                                </div>-->
                                 <div class="clear"></div>
                             </div>
                             <%GithubPojo gp = (GithubPojo) request.getAttribute("auth");%>
                             <div id="register" class="animate w3layouts agileits form">
                                 <h2>Sign up with <%=gp.getName()%></h2>
-                                <form  action="${root}/AdminServlet"  method="post" style="text-align: center;">
-                                    
-                                        <img src="<%=gp.getAvatar_url()%>" style="width: 371px; height: 100%">
-                                        <!--									<label>Name</label>-->
-                                        <input type="hidden" Name="ten" value="<%=gp.getName()%>">
-                                        <input type="hidden" Name="Anhdaidien" value="<%=gp.getAvatar_url()%>">
-                                        <input type="hidden" Name="Idgit" value="<%=gp.getId()%>">
-                                        <input type="hidden" Name="Email" value="<%=gp.getEmail()%>">
-                                        <input type="hidden" Name="User" value="<%=gp.getLogin()%>">
-                                        <!--									<label>Phone Number</label>
-                                                                                                                <input type="text" class="phone w3layouts agileits" Name="Phone Number" required="">
-                                                                                                                <label>E-mail</label>
-                                                                                                                <input type="text" Name="Email" required="">-->
-                                        <!--									<label>Password</label>
-                                                                                                                <input type="password" Name="Password" required="">-->
-                                        <div class="send-button w3layouts agileits">
-                                            
-                                            <input type="hidden" name="command" value="insert">
-                                             <input type="submit" value="SIGN UP">
-                                           
-                                        </div>
-                                    </form>
-                                    <p class="change_link w3layouts agileits">
-                                        Already a member? <a href="#tologin" class="to_register">Sign In</a>
-                                    </p>
-                                    <div class="clear"></div>
+                                <form  action="../AdminServlet"  method="post" style="text-align: center;">                                    
+                                    <img src="<%=gp.getAvatar_url()%>" style="width: 371px; height: 100%">
+                                    <input type="hidden" Name="ten" value="<%=gp.getName()%>">
+                                    <input type="hidden" Name="Anhdaidien" value="<%=gp.getAvatar_url()%>">
+                                    <input type="hidden" Name="Idgit" value="<%=gp.getId()%>">
+                                    <input type="hidden" Name="Email" value="<%=gp.getEmail()%>">
+                                    <input type="hidden" Name="User" value="<%=gp.getLogin()%>">
+                                    <div class="send-button w3layouts agileits">                                            
+                                        <input type="hidden" name="command" value="insert">
+                                        <input type="submit" value="SIGN UP">                                           
+                                    </div>
+                                </form>
+                                <p class="change_link w3layouts agileits">
+                                    Already a member? <a href="#tologin" class="to_register">Sign In</a>
+                                </p>
+                                <div class="clear"></div>
                                 </form>
                             </div>
                             <div class="clear"></div>
@@ -130,12 +112,9 @@
                 </section>
             </div>
             <div class="clear"></div>
-
         </div>
-
         <div class="footer w3layouts agileits">
             <p> &copy; 2016 Sơn Đoàn <a href="http://w3layouts.com" target="_blank">W3layouts</a></p>
         </div>
-
     </body>
 </html>

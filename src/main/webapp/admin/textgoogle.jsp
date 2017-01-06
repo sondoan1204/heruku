@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/ShopSW/OAuth2Callback&response_type=code&client_id=1072517011559-98o65aqld7in2j3du772p3uio5le3a2i.apps.googleusercontent.com&approval_prompt=force">
+        <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/Sandwich/OAuth2Callback&response_type=code&client_id=1072517011559-98o65aqld7in2j3du772p3uio5le3a2i.apps.googleusercontent.com&approval_prompt=force">
 	fsdf</a>
     </body>
 </html>

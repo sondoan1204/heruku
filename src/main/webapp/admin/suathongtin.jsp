@@ -1,8 +1,4 @@
-<%-- 
-    Document   : suathongtin
-    Created on : Dec 7, 2016, 8:58:02 PM
-    Author     : SONPC
---%>
+<%@page import="model.Admin"%>
 <%@page import="model.Imformation"%>
 <%@page import="dao.ImformationDAO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -17,21 +13,27 @@
 
 
         <!-- Bootstrap Core CSS -->
-        <link href="${root}/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../admin/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="${root}/admin/css/sb-admin.css" rel="stylesheet">
+        <link href="../admin/css/sb-admin.css" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
-        <link href="${root}/admin/ss/plugins/morris.css" rel="stylesheet">
+        <link href="../admin/ss/plugins/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="${root}/admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sửa thông tin website</title>
 
     </head>
-    <body>
+    <body><%
+            Admin users = (Admin) session.getAttribute("admin");
+            if (users == null) {
+                response.sendRedirect("dangnhap.jsp");
+
+            }
+        %>
         <%
             long id = 1;
             ImformationDAO imformationDAO = new ImformationDAO();
@@ -39,7 +41,6 @@
 
         %>
         <div id="wrapper">
-
             <jsp:include page="menu.jsp"></jsp:include>
                 <div class="col-lg-12">
                     <h1 class="page-header">
@@ -58,9 +59,7 @@
                     <div class="row">
                         <div class="col-lg-2"></div>
                         <div class="col-lg-8">
-
-                            <form action="/ShopSW/ManagerInfomationServlet" method="post" enctype="multipart/form-data">
-
+                            <form action="/Sandwich/ManagerInfomationServlet" method="post" enctype="multipart/form-data">
                                 <div class="panel panel-success" >
                                     <div class="panel-heading">
                                         <h3 class="panel-title"> Thông tin website </label></h3>
@@ -72,13 +71,13 @@
                                                     <label>Logo</label>
                                                      <input type="file" class="form-control" name="logo12">
                                                     <input type="hidden" class="form-control" name="tenLogo" value="<%=c.getLogo()%>">
-                                                <img src="${root}/upload/<%=c.getLogo()%>" style="width: 205px;height: 65px">
+                                                <img src="../images/<%=c.getLogo()%>" style="width: 65px;height: 65px">
                                             </div>
                                             <div class="form-group" style="text-align: center;">
                                                     <label>Icon</label>
                                                      <input type="file" class="form-control" name="icon12">
                                                      <input type="hidden" class="form-control" name="tenIcon" value="<%=c.getIcon()%>">
-                                                     <img src="${root}/upload/<%=c.getIcon()%>" style="width: 65px;height: 65px">
+                                                     <img src="../upload/<%=c.getIcon()%>" style="width: 65px;height: 65px">
                                             </div>
                                             <div class="form-group">
                                                 <label>Hotline</label>
@@ -149,7 +148,7 @@
                                 <input type="hidden" name="command" value="update">
                                 <input type="hidden" name="ID_Information" value="1">
                                 <input type="submit" class="btn btn-default" value="Lưu dữ liệu" >
-                                <a href="${root}/admin/quanlyproduct.jsp?pages=1"  class="btn btn-default">Hủy bỏ</a>
+                                <a href="../admin/quanlyproduct.jsp?pages=1"  class="btn btn-default">Hủy bỏ</a>
 
                             </div>
 

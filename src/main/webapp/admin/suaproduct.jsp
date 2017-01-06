@@ -1,11 +1,7 @@
-<%-- 
-    Document   : suaproduct
-    Created on : Dec 6, 2016, 1:26:59 PM
-    Author     : SONPC
---%>
+<%@page import="model.Admin"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="dao.CategoryDAO"%>
-<%@page import="model.Category"%>
+<%@page import="model.category"%>
 <%@page import="model.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.ProductDAO"%>
@@ -21,28 +17,32 @@
         <script src="../ckeditor/ckeditor.js" type="text/javascript"></script>
 
         <!-- Bootstrap Core CSS -->
-        <link href="${root}/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../admin/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="${root}/admin/css/sb-admin.css" rel="stylesheet">
+        <link href="../admin/css/sb-admin.css" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
-        <link href="${root}/admin/ss/plugins/morris.css" rel="stylesheet">
+        <link href="../admin/ss/plugins/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="${root}/admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sửa sản phẩm</title>
 
 
     </head>
-    <body>
-        <%
-            CategoryDAO categoryDAO = new CategoryDAO();
-            ArrayList<Category> listLoai = categoryDAO.getListLoai();
+    <body><%
+            Admin users = (Admin) session.getAttribute("admin");
+            if (users == null) {
+                response.sendRedirect("dangnhap.jsp");
+
+            }
         %>
-        <%
-            long id = Long.valueOf(request.getParameter("ID_Product"));
+        <%yDAO categoryDAO = new CategoryDAO();
+            ArrayList<category> listLoai = categoryDAO.getListLoai();
+        %>
+        <% = Long.valueOf(request.getParameter("ID_Product"));
             ProductDAO productDAO = new ProductDAO();
             Product c = productDAO.getProduct(id);
 
@@ -66,16 +66,16 @@
                 <div id="page-wrapper">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="/ShopSW/ManagerProductServlet" method="post" enctype="multipart/form-data">
+                            <form action="/Sandwich/ManagerProductServlet" method="post" enctype="multipart/form-data">
                                 <div class="panel panel-success" >
                                     <div class="panel-heading">
                                         <h3 class="panel-title"> Thông tin sản phẩm</h3>
                                     </div>
                                     <div class="panel-body">
                                         <div class="col-lg-5">
-                                            
-                                                <input type="hidden" class="form-control" name="ID_Product" value="<%=c.getProductID()%>" >
-                                        
+
+                                            <input type="hidden" class="form-control" name="ID_Product" value="<%=c.getProductID()%>" >
+
                                         <div class="form-group">
                                             <label>Tên sản phẩm</label>
                                             <input type="text" class="form-control" name="tenSanpham" value="<%=c.getProductName()%>" required>
@@ -87,9 +87,10 @@
                                             <label>Chọn Loại</label>
                                             <select class="form-control" name="maLoai">
                                                 <%
-                                                    for (Category category : listLoai) {
+                                                    for (category category : listLoai) {
                                                 %>
-                                                <option value="<%=category.getCategoryID()%>"<% if (c.getCategoryID() == category.getCategoryID()) {%>selected <%}%>><%=category.getCategoryName()%></option>
+                                                <option value="<%=category.getCategoryID()%>"<% if (c.getCategoryID
+                                                    ) == category.getCategoryID()) {%>selected <%}%>><%=category.getCategoryName()%></option>
                                                 <%}%>
 
                                             </select>
@@ -116,17 +117,17 @@
                                             <input type="file" class="form-control" name="hinh2" >
                                             <input class="form-control col-md-3"  type="hidden" name="anh1" value="<%=c.getProductSubImages1()%>">
                                             <input class="form-control col-lg-3" type="hidden" name="anhbia" value="<%=c.getProductImagesFeature()%>">
-                                             <label>Sub2</label>
+                                            <label>Sub2</label>
                                             <input type="file" class="form-control" name="hinh3" >
                                             <input class="form-control col-lg-3" type="hidden" name="anh2" value="<%=c.getProductSubImages2()%>" readonly>
                                             <div class="form-group">
                                                 <br>
-                                            <img src="${root}/upload/<%=c.getProductImagesFeature()%>" style="width: 135px;height: 135px">
-                                            <img src="${root}/upload/<%=c.getProductSubImages1()%>" style="width: 135px;height: 135px">
-                                             <img src="${root}/upload/<%=c.getProductSubImages2()%>" style="width: 135px;height: 135px">
+                                                <img src="../images-product/<%=c.getProductImagesFeature()%>" style="width: 135px;height: 135px">
+                                                <img src="../images-product/<%=c.getProductSubImages1()%>" style="width: 135px;height: 135px">
+                                                <img src="../images-product/<%=c.getProductSubImages2()%>" style="width: 135px;height: 135px">
                                             </div>
                                         </div>
-                                      
+
 
 
 
@@ -170,7 +171,7 @@
                                         </div>
                                         <input type="hidden" name="command" value="update">
                                         <input type="submit" class="btn btn-default" value="Lưu dữ liệu" >
-                                        <a href="${root}/admin/quanlyproduct.jsp?pages=1"  class="btn btn-default">Hủy bỏ</a>
+                                        <a href="../admin/quanlyproduct.jsp?pages=1"  class="btn btn-default">Hủy bỏ</a>
                                     </div>
 
                                 </div>

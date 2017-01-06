@@ -1,13 +1,10 @@
-<%-- 
-    Document   : seoproduct
-    Created on : Dec 12, 2016, 9:43:25 PM
-    Author     : SONPC
---%>
+
+<%@page import="model.Admin"%>
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="dao.CategoryDAO"%>
-<%@page import="model.Category"%>
+<%@page import="model.category"%>
 <%@page import="model.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.ProductDAO"%>
@@ -21,22 +18,28 @@
 
 
         <c:set var="root" value="${pageContext.request.contextPath}"/>
-        <link href="${root}/admin/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="../admin/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <!-- Bootstrap Core CSS -->
-        <link href="${root}/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../admin/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="${root}/admin/css/sb-admin.css" rel="stylesheet">
+        <link href="../admin/css/sb-admin.css" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
-        <link href="${root}/admin/css/plugins/morris.css" rel="stylesheet">
+        <link href="../admin/css/plugins/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="${root}/admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quản Lý sản phẩm</title>
     </head>
-    <body>
+    <body><%
+            Admin users = (Admin) session.getAttribute("admin");
+            if (users == null) {
+                response.sendRedirect("dangnhap.jsp");
+
+            }
+        %>
         <%
             String url = request.getRequestURI() + "?" + request.getQueryString();
             ProductDAO productDAO = new ProductDAO();
@@ -72,7 +75,7 @@
                 </div>
                 <div id="page-wrapper">
 
-                    <a href="${root}/admin/themproduct.jsp">Thêm sản phẩm mới</a>
+                    <a href="../admin/themproduct.jsp">Thêm sản phẩm mới</a>
                 <div class="row">
 
                     <div class="col-lg-12">
@@ -96,7 +99,7 @@
                                 for (Product product : listProduct) {
                                     count++;
                                     CategoryDAO categoryDAO = new CategoryDAO();
-                                    Category c = categoryDAO.getCategory(product.getCategoryID());
+                                    category c = categoryDAO.getCategory(product.getCategoryID());
                             %>
 
                             <tr <%if (product.getProductSt() == false) {%>class="danger"<%}%>>
@@ -134,9 +137,9 @@
                             <td >
                             <center>
                                 <%if (product.getProductSt() == true) {%>
-                                <a href="${root}/admin/themtags.jsp?ID_Product=<%=product.getProductID()%>">Chỉnh sửa thẻ Tags</a>
+                                <a href="../admin/themtags.jsp?ID_Product=<%=product.getProductID()%>">Chỉnh sửa thẻ Tags</a>
                                 <%} else {%>
-                                <a href="${root}/ManagerProductServlet?command=khoiphuc&ID_Product=<%=product.getProductID()%>&URL1204=<%=url%>">Khôi phục</a>
+                                <a href="../ManagerProductServlet?command=khoiphuc&ID_Product=<%=product.getProductID()%>&URL1204=<%=url%>">Khôi phục</a>
                                 <%}%>
                             </center>
                             </td>
