@@ -24,6 +24,14 @@
         <servlet-name>SearchServlet</servlet-name>
         <servlet-class>controller.SearchServlet</servlet-class>
     </servlet>
+	<servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>controller.AdminServlet</servlet-class>
+    </servlet>
+	 <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/AdminServlet</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CheckEmailServlet</servlet-name>
         <url-pattern>/CheckEmailServlet</url-pattern>
