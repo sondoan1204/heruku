@@ -24,6 +24,7 @@
         <script src='scripts/jquery-1.9.1.minefbf.js' type='text/javascript'></script>
     </head>
     <body>
+	 <jsp:include page="header.jsp"></jsp:include>
         <%
             NumberFormat format = new DecimalFormat("###,###");
             productSW pd = new productSW();
@@ -45,11 +46,12 @@
                 firstResult = (pages - 1) * 9;
                 maxResult = 9;
             }
-
+			String a = request.getRequestURL().toString();
             ArrayList<products> listProduct = pd.getListProduct(firstResult, maxResult);                    
         %>
-        <%String a = request.getRequestURL().toString();%>
-        <jsp:include page="header.jsp"></jsp:include>
+        
+       
+		
             <section class="sub-top-bn">
                 <h1>Danh sách sản phẩm</h1>
             </section>
