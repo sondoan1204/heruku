@@ -1,5 +1,4 @@
 <%@page import="model.Admin"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="dao.CategoryDAO"%>
 <%@page import="model.category"%>
 <%@page import="model.Product"%>
@@ -12,7 +11,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <c:set var="root" value="${pageContext.request.contextPath}"/>
 
         <script src="../ckeditor/ckeditor.js" type="text/javascript"></script>
 
