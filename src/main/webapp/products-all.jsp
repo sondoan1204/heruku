@@ -9,8 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta charset="UTF-8" /> 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="content-language" content="vi">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -33,7 +32,7 @@
                 cart = new cart();
                 session.setAttribute("cart", cart);
             }
-            int pages = 1, firstResult = 0, maxResult = 0, total = 0;
+            int pages = 1, firstResult = 0, maxResult = 0, total = 1;
             if (request.getParameter("pages") != null) {
                 pages = (int) Integer.parseInt(request.getParameter("pages"));
             }
