@@ -24,7 +24,7 @@
         <script src='scripts/jquery-1.9.1.minefbf.js' type='text/javascript'></script>
     </head>
     <body>
-	 <jsp:include page="header.jsp"> </jsp:include>
+	 <jsp:include page="header.jsp"></jsp:include>
         <%
             NumberFormat format = new DecimalFormat("###,###");
             productSW pd = new productSW();
