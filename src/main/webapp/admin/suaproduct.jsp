@@ -39,7 +39,7 @@
         %>
         <%
          CategoryDAO categoryDAO = new CategoryDAO();
-            ArrayList<category> listLoai = categoryDAO.getListLoai();
+            ArrayList<Category> listLoai = categoryDAO.getListLoai();
         %>
         <%  long id= Long.valueOf(request.getParameter("ID_Product"));
             ProductDAO productDAO = new ProductDAO();
