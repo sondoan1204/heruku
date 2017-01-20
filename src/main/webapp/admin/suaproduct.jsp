@@ -37,11 +37,12 @@
 
             }
         %>
-        <%
-         CategoryDAO categoryDAO = new CategoryDAO();
+      <%
+            CategoryDAO categoryDAO = new CategoryDAO();
             ArrayList<Category> listLoai = categoryDAO.getListLoai();
         %>
-        <%  long id= Long.valueOf(request.getParameter("ID_Product"));
+        <%
+            long id = Long.valueOf(request.getParameter("ID_Product"));
             ProductDAO productDAO = new ProductDAO();
             Product c = productDAO.getProduct(id);
 
@@ -88,8 +89,7 @@
                                                 <%
                                                     for (Category category : listLoai) {
                                                 %>
-                                                <option value="<%=category.getCategoryID()%>"<% if (c.getCategoryID
-                                                    ) == category.getCategoryID()) {%>selected <%}%>><%=category.getCategoryName()%></option>
+                                                <option value="<%=category.getCategoryID()%>"<% if (c.getCategoryID() == category.getCategoryID()) {%>selected <%}%>><%=category.getCategoryName()%></option>
                                                 <%}%>
 
                                             </select>
