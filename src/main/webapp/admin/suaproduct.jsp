@@ -1,6 +1,6 @@
 <%@page import="model.Admin"%>
 <%@page import="dao.CategoryDAO"%>
-<%@page import="model.category"%>
+<%@page import="model.Category"%>
 <%@page import="model.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.ProductDAO"%>
