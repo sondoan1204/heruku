@@ -4,7 +4,7 @@
     Author     : SONPC
 --%>
 <%@page import="dao.CategoryDAO"%>
-<%@page import="model.Category"%>
+<%@page import="model.category"%>
 <%@page import="model.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.ProductDAO"%>
@@ -34,7 +34,7 @@
     <body>
         <%
             CategoryDAO categoryDAO = new CategoryDAO();
-            ArrayList<Category> listLoai = categoryDAO.getListLoai();
+            ArrayList<category> listLoai = categoryDAO.getListLoai();
         %>
         <%
             long id = Long.valueOf(request.getParameter("ID_Product"));
@@ -82,7 +82,7 @@
                                             <label>Chọn Loại</label>
                                             <select class="form-control" name="maLoai">
                                                 <%
-                                                    for (Category category : listLoai) {
+                                                    for (category category : listLoai) {
                                                 %>
                                                 <option value="<%=category.getCategoryID()%>"<% if (c.getCategoryID() == category.getCategoryID()) {%>selected <%}%>><%=category.getCategoryName()%></option>
                                                 <%}%>
