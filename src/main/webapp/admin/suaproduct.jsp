@@ -41,7 +41,7 @@
          CategoryDAO categoryDAO = new CategoryDAO();
             ArrayList<category> listLoai = categoryDAO.getListLoai();
         %>
-        <% = Long.valueOf(request.getParameter("ID_Product"));
+        <%  long id= Long.valueOf(request.getParameter("ID_Product"));
             ProductDAO productDAO = new ProductDAO();
             Product c = productDAO.getProduct(id);
 
