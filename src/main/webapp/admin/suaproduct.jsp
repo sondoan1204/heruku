@@ -86,7 +86,7 @@
                                             <label>Chọn Loại</label>
                                             <select class="form-control" name="maLoai">
                                                 <%
-                                                    for (category category : listLoai) {
+                                                    for (Category category : listLoai) {
                                                 %>
                                                 <option value="<%=category.getCategoryID()%>"<% if (c.getCategoryID
                                                     ) == category.getCategoryID()) {%>selected <%}%>><%=category.getCategoryName()%></option>
