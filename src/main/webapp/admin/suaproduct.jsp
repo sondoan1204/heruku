@@ -1,4 +1,8 @@
-<%@page import="model.Admin"%>
+<%-- 
+    Document   : suaproduct
+    Created on : Dec 6, 2016, 1:26:59 PM
+    Author     : SONPC
+--%>
 <%@page import="dao.CategoryDAO"%>
 <%@page import="model.Category"%>
 <%@page import="model.Product"%>
@@ -20,9 +24,6 @@
         <!-- Custom CSS -->
         <link href="../admin/css/sb-admin.css" rel="stylesheet">
 
-        <!-- Morris Charts CSS -->
-        <link href="../admin/ss/plugins/morris.css" rel="stylesheet">
-
         <!-- Custom Fonts -->
         <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -30,14 +31,8 @@
 
 
     </head>
-    <body><%
-            Admin users = (Admin) session.getAttribute("admin");
-            if (users == null) {
-                response.sendRedirect("dangnhap.jsp");
-
-            }
-        %>
-      <%
+    <body>
+        <%
             CategoryDAO categoryDAO = new CategoryDAO();
             ArrayList<Category> listLoai = categoryDAO.getListLoai();
         %>
@@ -66,16 +61,16 @@
                 <div id="page-wrapper">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="/Sandwich/ManagerProductServlet" method="post" enctype="multipart/form-data">
+                            <form action="/ShopSW/ManagerProductServlet" method="post" enctype="multipart/form-data">
                                 <div class="panel panel-success" >
                                     <div class="panel-heading">
                                         <h3 class="panel-title"> Thông tin sản phẩm</h3>
                                     </div>
                                     <div class="panel-body">
                                         <div class="col-lg-5">
-
-                                            <input type="hidden" class="form-control" name="ID_Product" value="<%=c.getProductID()%>" >
-
+                                            
+                                                <input type="hidden" class="form-control" name="ID_Product" value="<%=c.getProductID()%>" >
+                                        
                                         <div class="form-group">
                                             <label>Tên sản phẩm</label>
                                             <input type="text" class="form-control" name="tenSanpham" value="<%=c.getProductName()%>" required>
@@ -116,17 +111,17 @@
                                             <input type="file" class="form-control" name="hinh2" >
                                             <input class="form-control col-md-3"  type="hidden" name="anh1" value="<%=c.getProductSubImages1()%>">
                                             <input class="form-control col-lg-3" type="hidden" name="anhbia" value="<%=c.getProductImagesFeature()%>">
-                                            <label>Sub2</label>
+                                             <label>Sub2</label>
                                             <input type="file" class="form-control" name="hinh3" >
                                             <input class="form-control col-lg-3" type="hidden" name="anh2" value="<%=c.getProductSubImages2()%>" readonly>
                                             <div class="form-group">
                                                 <br>
-                                                <img src="../images-product/<%=c.getProductImagesFeature()%>" style="width: 135px;height: 135px">
-                                                <img src="../images-product/<%=c.getProductSubImages1()%>" style="width: 135px;height: 135px">
-                                                <img src="../images-product/<%=c.getProductSubImages2()%>" style="width: 135px;height: 135px">
+                                            <img src="../upload/<%=c.getProductImagesFeature()%>" style="width: 135px;height: 135px">
+                                            <img src="../upload/<%=c.getProductSubImages1()%>" style="width: 135px;height: 135px">
+                                             <img src="../upload/<%=c.getProductSubImages2()%>" style="width: 135px;height: 135px">
                                             </div>
                                         </div>
-
+                                      
 
 
 
