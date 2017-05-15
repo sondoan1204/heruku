@@ -57,6 +57,7 @@
             e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
             e.async = true;
             document.getElementById('fb-root').appendChild(e);
+<<<<<<< HEAD
             }());
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -65,6 +66,16 @@
   js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=429789270711609";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+=======
+            }());</script>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=353011608412219";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+>>>>>>> parent of 79bc48a... Update detail.jsp
 
 
         <jsp:include page="header.jsp"></jsp:include>
