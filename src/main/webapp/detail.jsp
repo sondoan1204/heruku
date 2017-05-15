@@ -26,6 +26,13 @@
         <meta http-equiv="content-language" content="vi">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title><%=product.getTen()%></title>
+
+        <meta property="og:url"           content="<%= request.getRequestURL()%>?product=<%=product.getIDsp()%>" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="<%=product.getTen()%>" />
+        <meta property="og:description"   content="Your description" />
+        <meta property="og:image"         content="./images-product/<%=product.getAnh2()%>" />
+
         <!-- *** Site Style ***-->
         <link href='css/bootstrapefbf.css' rel='stylesheet' type='text/css' />
         <link href='css/font-awesomeefbf.css' rel='stylesheet' type='text/css' />
@@ -144,8 +151,13 @@
                                     <a href='CartServlet?command=plus&productID=<%=product.getIDsp()%>&url=<%=a%>?product=<%=product.getIDct()%>' class="btn btn-primary addtocart">Mua hàng</a>
                                 </div>
                                 <div class="fb-like" data-href="<%= request.getRequestURL()%>?product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+
                                 Thêm nút like ở đây
-<!--                                <div class="fb-like" data-href="http://minhduc.com/detail.jsp?product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>-->
+                                <div class="fb-share-button" 
+                                     data-href="<%= request.getRequestURL()%>?product=<%=product.getIDsp()%>" 
+                                     data-layout="button_count">
+                                </div>
+                              <!--                                <div class="fb-like" data-href="http://minhduc.com/detail.jsp?product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>-->
                                 <div class="addthis">
                                     <script type="text/javascript" src="../s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5620cf1235df3004" async="async"></script>	
                                     <div class="addthis_native_toolbox"></div>
