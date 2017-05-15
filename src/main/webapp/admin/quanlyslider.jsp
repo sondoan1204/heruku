@@ -1,4 +1,5 @@
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="model.slide"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.SlideDAO"%>
@@ -10,6 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
+      <c:set var="root" value="${pageContext.request.contextPath}"/>
 
 
         <!-- Bootstrap Core CSS -->

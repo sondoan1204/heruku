@@ -2,6 +2,7 @@
 <%@page import="model.Admin"%>
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.text.DecimalFormat"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="dao.CategoryDAO"%>
 <%@page import="model.category"%>
 <%@page import="model.Product"%>
@@ -16,6 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+        <c:set var="root" value="${pageContext.request.contextPath}"/>
         <link href="../admin/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <!-- Bootstrap Core CSS -->
         <link href="../admin/css/bootstrap.min.css" rel="stylesheet">

@@ -8,6 +8,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns:fb='http://www.facebook.com/2008/fbml' >
+    <%
+        NumberFormat format = new DecimalFormat("###,###");
+        productSW pd = new productSW();
+        products product = new products();
+        String product_id = "";
+        if (request.getParameter("product") != null) {
+            product_id = request.getParameter("product");
+            product = pd.getProductDetail(Long.parseLong(product_id));
+        }
+    %>
     <head>
         <meta property="fb:app_id" content="353011608412219" />
         <meta charset="UTF-8" />
@@ -15,7 +25,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="content-language" content="vi">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>Chi tiết sản phẩm | Big food</title>
+        <title><%=product.getTen()%></title>
         <!-- *** Site Style ***-->
         <link href='css/bootstrapefbf.css' rel='stylesheet' type='text/css' />
         <link href='css/font-awesomeefbf.css' rel='stylesheet' type='text/css' />
@@ -27,41 +37,31 @@
     </head>
     <body>
         <div id="fb-root"></div>
-<script>
-window.fbAsyncInit = function() {
-FB.init({
-appId : '353011608412219',
-status : true, // check login status
-cookie : true, // enable cookies to allow the server to access the session
-xfbml : true // parse XFBML});
-};
-(function() {
-var e = document.createElement('script');
-e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-e.async = true;
-document.getElementById('fb-root').appendChild(e);
-}());
-</script>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=353011608412219";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+        <script>
+            window.fbAsyncInit = function() {
+            FB.init({
+            appId : '429789270711609',
+                    status : true, // check login status
+                    cookie : true, // enable cookies to allow the server to access the session
+                    xfbml : true // parse XFBML});
+            };
+            (function() {
+            var e = document.createElement('script');
+            e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+            e.async = true;
+            document.getElementById('fb-root').appendChild(e);
+            }());</script>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=353011608412219";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
 
-        <%
-            NumberFormat format = new DecimalFormat("###,###");
-            productSW pd = new productSW();
-            products product = new products();
-            String product_id = "";
-            if (request.getParameter("product") != null) {
-                product_id = request.getParameter("product");
-                product = pd.getProductDetail(Long.parseLong(product_id));
-            }
-        %>
+
         <jsp:include page="header.jsp"></jsp:include>
-        <section class="sub-top-bn">
+            <section class="sub-top-bn">
                 <h1><%=product.getTen()%></h1>
         </section>
         <section class="bcrumb">
@@ -132,20 +132,19 @@ document.getElementById('fb-root').appendChild(e);
                                         <input type="text" id="qty" class="bizwebinput form-control product_input_qty qtt-center" value="1" name="quantity" min="1" onpaste="return false;" onkeypress='validate(event)'/>
                                         <span class="input-group-btn data-up">
                                             <div onclick="var result = document.getElementById('qty');
-                                                    var qty = result.value;
-                                                    if (!isNaN(qty))
+                                                var qty = result.value;
+                                                if (!isNaN(qty))
                                                         result.value++;
-                                                    return false;" class="btn mathbtn" data-dir="up"><span class="fa fa-plus"></span></div>
+                                                return false;" class="btn mathbtn" data-dir="up"><span class="fa fa-plus"></span></div>
                                         </span>
                                     </div>
                                 </div>
                                 <div class="action-box clearfix">
                                     <%String a = request.getRequestURL().toString();%>
                                     <a href='CartServlet?command=plus&productID=<%=product.getIDsp()%>&url=<%=a%>?product=<%=product.getIDct()%>' class="btn btn-primary addtocart">Mua hàng</a>
-
                                 </div>
-                                    <div class="fb-like" data-href="http://minhduc.com/detail.jsp?product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-                                    Thêm nút like ở đây
+                                <div class="fb-like" data-href="<%= request.getRequestURL()%>?product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                                Thêm nút like ở đây
 <!--                                <div class="fb-like" data-href="http://minhduc.com/detail.jsp?product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>-->
                                 <div class="addthis">
                                     <script type="text/javascript" src="../s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5620cf1235df3004" async="async"></script>	
@@ -183,7 +182,7 @@ document.getElementById('fb-root').appendChild(e);
                                         if (t == null) {%>
                                 <li class="producttagsli"><a href="#">Sản phẩm chưa có tag</a></li>
                                     <%break;
-                                                }%>
+                                        }%>
                                 <li class="producttagsli">
                                     <a href="tag.jsp?tag=<%=t.getTagName()%>" title="<%=t.getTagName()%>"><%=t.getTagName()%></a>
                                 </li>
