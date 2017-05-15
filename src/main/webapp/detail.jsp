@@ -27,7 +27,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title><%=product.getTen()%></title>
 
-        <meta property="og:url"           content="<%= request.getRequestURL()%>?product=<%=product.getIDsp()%>" />
+        <meta property="og:url"           content="https://<%= request.getRequestURL()%>?product=<%=product.getIDsp()%>" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="<%=product.getTen()%>" />
         <meta property="og:description"   content="Sơn Đoàn" />
@@ -57,14 +57,14 @@
             e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
             e.async = true;
             document.getElementById('fb-root').appendChild(e);
-            }());</script>
-        <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=429789270711609";
-            fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
+            }());
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=429789270711609";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
         <jsp:include page="header.jsp"></jsp:include>
@@ -154,7 +154,7 @@
 
                                 Thêm nút like ở đây
                                 <div class="fb-share-button" 
-                                     data-href="<%= request.getRequestURL()%>?product=<%=product.getIDsp()%>" 
+                                     data-href="https://<%= request.getRequestURL()%>?product=<%=product.getIDsp()%>" 
                                      data-layout="button_count">
                                 </div>
                               <!--                                <div class="fb-like" data-href="http://minhduc.com/detail.jsp?product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>-->
