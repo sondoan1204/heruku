@@ -150,7 +150,7 @@
                                     <%String a = request.getRequestURL().toString();%>
                                     <a href='CartServlet?command=plus&productID=<%=product.getIDsp()%>&url=<%=a%>?product=<%=product.getIDct()%>' class="btn btn-primary addtocart">Mua hàng</a>
                                 </div>
-                                <div class="fb-like" data-href="https://sondoan1204-javatest.herokuapp.com/detail.jsp??product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                                <div class="fb-like" data-href="https://sondoan1204-javatest.herokuapp.com/detail.jsp?product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
                                 Thêm nút like ở đây
                                 <div class="fb-share-button" 
