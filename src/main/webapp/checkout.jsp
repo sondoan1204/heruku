@@ -127,7 +127,7 @@
                                                             <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
                                                 <!-- Identify your business so that you can collect the payments. -->
                                                 <input type="hidden" name="business" value="sondoan1204@gmail.com">
-                                                    <input type="hidden" name="return" value="http://localhost:8080/Sandwich/CheckOutServlet?sontung=online" />
+                                                    <input type="hidden" name="return" value="https://sondoan1204-javatest.herokuapp.com/CheckOutServlet?sontung=online" />
                                                     <!-- Specify a Buy Now button. -->
                                                     <input type="hidden" name="cmd" value="_xclick">
                                                         <%if (users != null) {%>
