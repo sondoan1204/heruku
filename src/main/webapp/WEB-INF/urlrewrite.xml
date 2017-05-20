@@ -43,7 +43,20 @@
            <name>Trang chủ </name>
             <from>/index.sml</from>
             <to>/index.jsp</to>
+            <from>/products-all.sml</from>
+            <to>/products-all.jsp</to>
         </rule>
+        <rule>
+              <name>All SP</name>
+            <from>/products-all.sml</from>
+            <to>/products-all.jsp</to>
+        </rule>
+<!-- 
+     <rule>
+         <name>All SP</name>
+            <from>/products-all.jsp</from>
+            <to type="redirect">./products-all.sml</to>
+        </rule>-->
     <outbound-rule>
         <note>
             The outbound-rule specifies that when response.encodeURL is called (if you are using JSTL c:url)
