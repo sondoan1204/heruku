@@ -19,7 +19,9 @@
         }
     %>
     <head>
-        <meta property="fb:app_id" content="353011608412219" />
+        <meta property="fb:app_id" content="429789270711609" />
+        <meta property="fb:admins" content="1362709700485306">
+        
         <meta charset="UTF-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -181,7 +183,7 @@
                         <div role="tabpanel" class="tab-pane" id="tab_2">
                             <div class="std">
                                 Thêm bình luận ở đây
-                                <div class="fb-comments" data-href="http://localhost:8080/Sandwich/detail.jsp?product=<%=product.getIDsp()%>" data-width="760" data-num-posts="20"></div>
+                                <div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" data-width="760" data-num-posts="20"></div>
 <!--                                <div class="fb-comments" data-href="http://localhost:8080/Sandwich/detail.jsp?product=<%=product.getIDsp()%>" data-width="100%" data-num-posts="20"></div>-->
                             </div>
                         </div>

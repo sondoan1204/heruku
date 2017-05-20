@@ -17,46 +17,47 @@
         </note>
         <from>/test/status/</from>
         <to type="redirect">%{context-path}/rewrite-status</to>
-            
-<!--        <from>/detail.jsp?product=([0-1]+)$</from>
-        <to>%{context-path}/chi-tiet-san-pham/$1</to>
-        
--->     
-
     </rule>
 
     <rule>
-         <name>Products 2</name>
-            <from>san-pham-([0-9]+)$</from>
+         <name>Products </name>
+            <from>san-pham-([0-9]+)</from>
             <to>products.jsp?category=$1</to>
      </rule>
+
       <rule>
          <name>detai sản phẩm</name>
             <from>chi-tiet-([0-9]+)$</from>
             <to>detail.jsp?product=$1</to>
      </rule>
-<!--    <rude>   
-            <from>/products.jsp?category=$1</from>
-            <to type="redirect">/san-pham/([0-9]+)$</to>
-    </rude>-->
        <rule>
            <name>Trang chủ </name>
-            <from>/index.sml</from>
+            <from>/trang-chu</from>
             <to>/index.jsp</to>
-            <from>/products-all.sml</from>
-            <to>/products-all.jsp</to>
         </rule>
         <rule>
               <name>All SP</name>
-            <from>/products-all.sml</from>
+            <from>/tat-ca-san-pham</from>
             <to>/products-all.jsp</to>
         </rule>
-<!-- 
-     <rule>
-         <name>All SP</name>
-            <from>/products-all.jsp</from>
-            <to type="redirect">./products-all.sml</to>
-        </rule>-->
+
+        <rule>
+           <name>Khuyen mai</name>
+            <from>/san-pham-khuyen-mai</from>
+            <to>/products-khuyenmai.jsp</to>
+        </rule>
+         
+
+        <rule>
+           <name>Liên hệ</name>
+            <from>/lien-he</from>
+            <to>/contact.jsp</to>
+        </rule>
+        <rule>
+           <name>Tin tức</name>
+            <from>/tin-tuc</from>
+            <to>/thegioi.jsp</to>
+        </rule>
     <outbound-rule>
         <note>
             The outbound-rule specifies that when response.encodeURL is called (if you are using JSTL c:url)
@@ -71,7 +72,14 @@
 
     </outbound-rule>
 
+   <outbound-rule>
+        <note>
+          return
+        </note>
+            <from>san-pham-([0-9]+)$</from>
+            <to>products.jsp?category=$1</to>
 
+    </outbound-rule>
 
     <!--
 

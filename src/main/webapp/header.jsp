@@ -46,10 +46,10 @@
                     </div>
                     <div class="top-right">
                         <ul class="list-unstyled">
-                            <li class="first"><a href="index.sml"><span>Trang chủ</span></a></li>
-                            <li class=""><a href="products-all.jsp"><span>Sản phẩm</span></a></li>
-                            <li class=""><a href="products-khuyenmai.jsp"><span>Tin tức</span></a></li>
-                            <li class=""><a href="contact.jsp"><span>Liên hệ</span></a></li>
+                            <li class="first"><a href="trang-chu"><span>Trang chủ</span></a></li>
+                            <li class=""><a href="tat-ca-san-pham"><span>Sản phẩm</span></a></li>
+                            <li class=""><a href="tin-tuc"><span>Tin tức</span></a></li>
+                            <li class=""><a href="lien-he"><span>Liên hệ</span></a></li>
                                 <% if (users == null) {%> 
                             <li class="last"><a href="login.jsp"><span>Tài khoản</span></a>
                                 <ul class="list-unstyled top-account">
@@ -139,7 +139,7 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-12 col-xs-12">
                             <div class="logo">
-                                <a href="index.jsp">
+                                <a href="trang-chu">
                                     <img src="./images/logo.png" title="<%=info.getSitename()%>" alt="<%=info.getSitename()%>" style="height: 110px">
                                 </a>
                             </div>
@@ -170,12 +170,12 @@
                     <div class="menu hidden-sm hidden-xs">
                         <ul class="list-unstyled">
                             <li class="first ">
-                                <a href="index.jsp"><span>Trang chủ</span></a>
+                                <a href="trang-chu"><span>Trang chủ</span></a>
                             </li>
                             <li class="">
                                 <a href="#"><span>Giới thiệu</span></a>
                             </li>
-                            <li class=" sub-menu"><a href="products-all.jsp"><span>Sản phẩm</span></a>
+                            <li class=" sub-menu"><a href="tat-ca-san-pham"><span>Sản phẩm</span></a>
                                 <ul class="list-unstyled">
                                     <% categorySW danhmuc = new categorySW();
                                         for (category c : danhmuc.getListCategory()) {
@@ -187,13 +187,13 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="products-khuyenmai.jsp"><span>Khuyến mãi</span></a>
+                                <a href="san-pham-khuyen-mai"><span>Khuyến mãi</span></a>
                             </li>
                             <li class="">
-                                <a href="thegioi.jsp"><span>Tin tức</span></a>
+                                <a href="tin-tuc"><span>Tin tức</span></a>
                             </li>
                             <li class="last ">
-                                <a href="contact.jsp"><span>Liên hệ</span></a>
+                                <a href="lien-he"><span>Liên hệ</span></a>
                             </li>
                         </ul>
                     </div>
