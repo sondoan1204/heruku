@@ -1,7 +1,7 @@
 <%@page import="model.Admin"%>
 <%@page import="model.Imformation"%>
 <%@page import="dao.ImformationDAO"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <c:set var="root" value="${pageContext.request.contextPath}"/>
+        <%--<c:set var="root" value="${pageContext.request.contextPath}"/>--%>
 
 
         <!-- Bootstrap Core CSS -->

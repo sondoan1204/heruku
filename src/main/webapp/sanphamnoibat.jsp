@@ -28,7 +28,7 @@
                             <img src="images-product/<%=p.getAnhbia()%>" alt="<%=p.getTen()%>">
                         </a>
                         <div class="prod-info">
-                            <a href="detail.jsp"><h3><%=p.getTen()%></h3></a>
+                            <a href="san-pham-<%=p.getIDsp()%>"><h3><%=p.getTen()%></h3></a>
 
                             <%if (p.getTTkm() == true) {%>
                             <div class="price-box">

@@ -7,7 +7,7 @@
 <%@page import="dao.TagsDAO"%>
 <%@page import="model.CTTags"%>
 <%@page import="java.util.ArrayList"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <c:set var="root" value="${pageContext.request.contextPath}"/>
+        <!--<c:set var="root" value="${pageContext.request.contextPath}"/>-->
         <link href="../admin/js/bootstrap-tagsinput.css" rel="stylesheet" type="text/css"/>
         <link href="../admin/css/bootstrap.min.css" rel="stylesheet">
         <link href="../admin/css/sb-admin.css" rel="stylesheet">

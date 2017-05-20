@@ -4,7 +4,7 @@
     Author     : SONPC
 --%>
 <%@page import="model.Admin"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@page import="model.DonHang"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.DonHangDAO"%>
