@@ -46,7 +46,7 @@
                     </div>
                     <div class="top-right">
                         <ul class="list-unstyled">
-                            <li class="first"><a href="index.sml"><span>Trang chủ</span></a></li>
+                            <li class="first"><a href="index.jsp"><span>Trang chủ</span></a></li>
                             <li class=""><a href="products-all.jsp"><span>Sản phẩm</span></a></li>
                             <li class=""><a href="products-khuyenmai.jsp"><span>Tin tức</span></a></li>
                             <li class=""><a href="contact.jsp"><span>Liên hệ</span></a></li>
@@ -180,7 +180,7 @@
                                     <% categorySW danhmuc = new categorySW();
                                         for (category c : danhmuc.getListCategory()) {
                                     %> 
-                                    <li><a class="" href="san-pham-<%=c.getCategoryID()%>"><span><%=c.getCategoryName()%>  </span></a></li>
+                                    <li><a class="" href="products.jsp?category=<%=c.getCategoryID()%>"><span><%=c.getCategoryName()%>  </span></a></li>
                                         <%
                                             }
                                         %>

@@ -103,7 +103,7 @@
                                     <div class="col-md-4 col-sm-6 col-xs-12">
                                         <div class="product-grid">
                                             <div class="feature-img">
-                                                <a href="san-pham-<%=p.getIDsp()%>">
+                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
                                                     <img src="images-product/<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                                 </a>
                                                     <div class="grid-action-box">
@@ -129,7 +129,7 @@
                                                 </div>
                                                 <%}%>
 
-                                                <a href="san-pham-<%=p.getIDsp()%>">
+                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
                                                     <h3><%=p.getTen()%></h3>
                                                 </a>
                                             </div>
