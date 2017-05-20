@@ -38,7 +38,7 @@
                 pages = (int) Integer.parseInt(request.getParameter("pages"));
             }
 
-            total = pd.countProduct();
+            total = pd.countProductPromotion();
             if (total <= 9) {
                 firstResult = 0;
                 maxResult = total;
@@ -47,7 +47,7 @@
                 maxResult = 9;
             }
 
-            ArrayList<products> listProduct = pd.getListProduct(firstResult, maxResult);                    
+            ArrayList<products> listProduct = pd.getListProductByPromotion(firstResult, maxResult);                    
         %>
         <%String a = request.getRequestURL().toString();%>
         <jsp:include page="header.jsp"></jsp:include>
@@ -202,7 +202,7 @@
                                     <li class="current"><%=i%></li>
                                         <%} else {
                                         %>                                    
-                                    <li class="arrow"><a href="products-all.jsp?&pages=<%=i%>"><%=i%></a></li>
+                                    <li class="arrow"><a href="products-khuyenmai.jsp?&pages=<%=i%>"><%=i%></a></li>
                                         <%}
                                         }%>
                                 </ul>

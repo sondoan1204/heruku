@@ -27,7 +27,8 @@
             RSSFeedParser parser = new RSSFeedParser(
                     "http://vnexpress.net/rss/the-gioi.rss");
             Feed feed = parser.readFeed();
-        %>     
+        %>  
+        <jsp:include page="header.jsp"></jsp:include>
         <section class="sub-top-bn">
             <h1><%=new SimpleDateFormat("dd/MM/yyyy").format(Date.parse(feed.getPubDate()))%></h1>
         </section>

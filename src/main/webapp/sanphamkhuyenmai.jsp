@@ -18,7 +18,7 @@
                         NumberFormat format = new DecimalFormat("###,###");
                         productSW pd = new productSW();
                         int count = 0;
-                        for (products p : pd.getListProductByPromotion()) {
+                        for (products p : pd.getListProductByPromotion(0,0)) {
                             count ++;
                             if(count > 5)
                             {break;}

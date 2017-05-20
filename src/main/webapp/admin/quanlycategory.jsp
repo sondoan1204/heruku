@@ -1,5 +1,6 @@
 
 <%@page import="model.Admin"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="model.category"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.CategoryDAO"%>
@@ -13,6 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+        <c:set var="root" value="${pageContext.request.contextPath}"/>
 
         <!-- Bootstrap Core CSS -->
         <link href="../admin/css/bootstrap.min.css" rel="stylesheet">

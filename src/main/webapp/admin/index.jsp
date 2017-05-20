@@ -3,7 +3,7 @@
 <%@page import="java.util.GregorianCalendar"%>
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.text.DecimalFormat"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="model.ChartPie"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.ChartDAO"%>
