@@ -19,8 +19,6 @@
         }
     %>
     <head>
-        <meta property="fb:app_id" content="429789270711609" />
-        <meta property="fb:admins" content="1362709700485306">
 
         <meta charset="UTF-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -29,7 +27,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title><%=product.getTen()%></title>
 
-        <meta property="og:url"           content="https://sondoan1204-javatest.herokuapp.com/detail.jsp?product=<%=product.getIDsp()%>" />
+        <meta property="fb:app_id" content="429789270711609" />
+        <meta property="fb:admins" content="1362709700485306">
+        <meta property="og:url"           content="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="<%=product.getTen()%>" />
         <meta property="og:description"   content="Giá: <%=product.getMotangan()%>" />
@@ -197,7 +197,7 @@
                             <div class="std">
 
                                 <div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" data-width="760" data-num-posts="20"></div>
-
+                                <div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" data-numposts="5"></div>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab_3">
