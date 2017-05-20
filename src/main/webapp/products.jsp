@@ -16,13 +16,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Sản phẩm | Big food</title>
         <!-- *** Site Style ***-->
-        <link href='./css/bootstrapefbf.css' rel='stylesheet' type='text/css' />
-        <link href='./css/font-awesomeefbf.css' rel='stylesheet' type='text/css' />
-        <link href='./css/owl.carouselefbf.css' rel='stylesheet' type='text/css' />
-        <link href='./css/owl.transitionsefbf.css' rel='stylesheet' type='text/css' />
-        <link href='./css/css-main-stylesefbf.css' rel='stylesheet' type='text/css' />
+        <link href='css/bootstrapefbf.css' rel='stylesheet' type='text/css' />
+        <link href='css/font-awesomeefbf.css' rel='stylesheet' type='text/css' />
+        <link href='css/owl.carouselefbf.css' rel='stylesheet' type='text/css' />
+        <link href='css/owl.transitionsefbf.css' rel='stylesheet' type='text/css' />
+        <link href='css/css-main-stylesefbf.css' rel='stylesheet' type='text/css' />
         <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=latin,vietnamese' rel='stylesheet' type='text/css'>
-        <script src='./scripts/jquery-1.9.1.minefbf.js' type='text/javascript'></script>
+        <script src='scripts/jquery-1.9.1.minefbf.js' type='text/javascript'></script>
     </head>
     <body>
         <%
@@ -111,7 +111,7 @@
                                     <div class="col-md-4 col-sm-6 col-xs-12">
                                         <div class="product-grid">
                                             <div class="feature-img">
-                                                <a href="chi-tiet-<%=p.getIDsp()%>">
+                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
                                                     <img src="images-product/<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                                 </a>
                                                     <div class="grid-action-box">
@@ -137,7 +137,7 @@
                                                 </div>
                                                 <%}%>
 
-                                                <a href="chi-tiet-<%=p.getIDsp()%>">
+                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
                                                     <h3><%=p.getTen()%></h3>
                                                 </a>
                                             </div>
@@ -155,12 +155,12 @@
 
                                 <div class="product-grid clearfix">
                                     <div class="feature-img">
-                                        <a href="chi-tiet-<%=p.getIDsp()%>">
+                                        <a href="detail.jsp?product=<%=p.getIDsp()%>">
                                             <img src="images-product/<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                         </a>
                                     </div>
                                     <div class="prod-info">
-                                        <a href="chi-tiet-<%=p.getIDsp()%>">
+                                        <a href="detail.jsp?product=<%=p.getIDsp()%>">
                                             <h3><%=p.getTen()%></h3>
                                         </a>
                                         <div class="desc">
@@ -249,12 +249,12 @@
             </script>
         <jsp:include page="footer.jsp"></jsp:include>
         <jsp:include page="copyright.jsp"></jsp:include>
-        <script src='./scripts/bootstrap.minefbf.js' type='text/javascript'></script>
-        <script src='./scripts/owl.carouselefbf.js' type='text/javascript'></script>
-        <script src='./scripts/main-scriptefbf.js' type='text/javascript'></script>
-        <script src='./scripts/componentsefbf.js' type='text/javascript'></script>
-        <script src='./scripts/appefbf.js' type='text/javascript'></script>
-        <script src='./scripts/ajax-cartefbf.js' type='text/javascript'></script>
+        <script src='scripts/bootstrap.minefbf.js' type='text/javascript'></script>
+        <script src='scripts/owl.carouselefbf.js' type='text/javascript'></script>
+        <script src='scripts/main-scriptefbf.js' type='text/javascript'></script>
+        <script src='scripts/componentsefbf.js' type='text/javascript'></script>
+        <script src='scripts/appefbf.js' type='text/javascript'></script>
+        <script src='scripts/ajax-cartefbf.js' type='text/javascript'></script>
 
     </body>
 </html>

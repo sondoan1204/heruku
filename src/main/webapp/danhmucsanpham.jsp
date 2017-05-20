@@ -17,7 +17,7 @@
 		<% categorySW danhmuc = new categorySW();
                             for (category c : danhmuc.getListCategory()){
                             %> 
-                            <li><a class="" href="san-pham-<%=c.getCategoryID()%>"><span><%=c.getCategoryName() %>  </span></a></li>
+                            <li><a class="" href="products.jsp?category=<%=c.getCategoryID()%>"><span><%=c.getCategoryName() %>  </span></a></li>
                             <%
                             }
                             %>                            
