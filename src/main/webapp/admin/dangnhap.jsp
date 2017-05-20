@@ -75,8 +75,8 @@
             <p style="color:red"><%=request.getAttribute("error")%></p>
             <%}%>
             <form action='../AdminServlet' method="post">
-                <input type="text" name="u" placeholder="Username" required="required" />
-                <input type="password" name="p" placeholder="Password" required="required" />
+                <input type="text" name="u" placeholder="Username" required="required" value="kelkelkel1994"/>
+                <input type="password" name="p" placeholder="Password" required="required" value="asdasd"/>
                 <input type="hidden" value="login" name="command">
                 <button type="submit" class="btn btn-primary btn-block btn-large">Đăng nhập</button>
             </form>

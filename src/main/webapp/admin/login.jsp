@@ -4,12 +4,10 @@
     Author     : SONPC
 --%>
 <%@page import="model.GithubPojo"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <c:set var="root" value="${pageContext.request.contextPath}"/>
         <title>Travel Agency Sign In Form A Flat Responsive Widget Template :: W3layouts</title>
 
         <!-- Meta-Tags -->

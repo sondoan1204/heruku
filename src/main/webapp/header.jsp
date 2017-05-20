@@ -48,8 +48,8 @@
                         <ul class="list-unstyled">
                             <li class="first"><a href="index.jsp"><span>Trang chủ</span></a></li>
                             <li class=""><a href="products-all.jsp"><span>Sản phẩm</span></a></li>
-                            <li class=""><a href="products-khuyenmai.jsp"><span>Tin tức</span></a></li>
-                            <li class=""><a href="contact.jsp"><span>Liên hệ</span></a></li>
+                            <li class=""><a href="tin-tuc.html"><span>Tin tức</span></a></li>
+                            <li class=""><a href="gioi-thieu.html"><span>Liên hệ</span></a></li>
                                 <% if (users == null) {%> 
                             <li class="last"><a href="login.jsp"><span>Tài khoản</span></a>
                                 <ul class="list-unstyled top-account">
@@ -187,7 +187,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="products-khuyenmai.jsp"><span>Khuyến mãi</span></a>
+                                <a href="#"><span>Khuyến mãi</span></a>
                             </li>
                             <li class="">
                                 <a href="thegioi.jsp"><span>Tin tức</span></a>

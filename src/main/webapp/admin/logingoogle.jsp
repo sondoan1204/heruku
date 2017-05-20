@@ -5,12 +5,10 @@
 --%>
 
 <%@page import="model.GooglePojo"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <c:set var="root" value="${pageContext.request.contextPath}"/>
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
        
         <link href="${root}/admin/css_login/animate-custom.css" rel="stylesheet" type="text/css"/>

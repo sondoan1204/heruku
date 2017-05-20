@@ -9,8 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta charset="UTF-8" /> 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="content-language" content="vi">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,6 +24,7 @@
         <script src='scripts/jquery-1.9.1.minefbf.js' type='text/javascript'></script>
     </head>
     <body>
+	 <jsp:include page="header.jsp"></jsp:include>
         <%
             NumberFormat format = new DecimalFormat("###,###");
             productSW pd = new productSW();
@@ -33,7 +33,7 @@
                 cart = new cart();
                 session.setAttribute("cart", cart);
             }
-            int pages = 1, firstResult = 0, maxResult = 0, total = 0;
+            int pages = 1, firstResult = 0, maxResult = 0, total = 1;
             if (request.getParameter("pages") != null) {
                 pages = (int) Integer.parseInt(request.getParameter("pages"));
             }
@@ -46,11 +46,12 @@
                 firstResult = (pages - 1) * 9;
                 maxResult = 9;
             }
-
+			String a = request.getRequestURL().toString();
             ArrayList<products> listProduct = pd.getListProduct(firstResult, maxResult);                    
         %>
-        <%String a = request.getRequestURL().toString();%>
-        <jsp:include page="header.jsp"></jsp:include>
+        
+       
+		
             <section class="sub-top-bn">
                 <h1>Danh sách sản phẩm</h1>
             </section>

@@ -79,15 +79,10 @@
                                     </div>
                                     <p>Bằng cách tạo một tài khoản với cửa hàng của chúng tôi, bạn sẽ có thể di chuyển thông qua các quy trình kiểm tra nhanh hơn, lưu trữ nhiều địa chỉ gửi hàng, xem và theo dõi đơn đặt hàng của bạn trong tài khoản của bạn và nhiều hơn nữa.</p>
                                 </div>
-                                <div class="buttons-set" style="text-align: center">
-                                    <button type="button" title="Khởi tạo tài khoản" class="button" onclick="window.location.href = 'signup.jsp';"><span><span>Tạo tài khoản</span></span></button>
-                                
-                                    </br> ------ hoặc Đăng nhập bằng ------</br>
                                 <div class="buttons-set">
-                                <button style="background: #E9654C;" type="button" title="Đăng nhập tài khoản bằng Google" class="button" onclick="window.location.href = 'https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=https://sondoan1204-javatest.herokuapp.com/OAuth2Callback&response_type=code&client_id=1072517011559-98o65aqld7in2j3du772p3uio5le3a2i.apps.googleusercontent.com&approval_prompt=force';"><span><span>Google</span></span></button>
-                                <button style="background: #3b5998;" type="button" title="Đăng nhập tài khoản bằng Facebook" class="button" onclick="window.location.href = 'https://www.facebook.com/dialog/oauth?client_id=429789270711609&redirect_uri=https://sondoan1204-javatest.herokuapp.com/OAuth2fb&scope=email&scope=user_friends';"><span><span>Facebook</span></span></button>                                
-                                <button style="background: #333;" type="button" title="Đăng nhập tài khoản bằng GitHub" class="button" onclick="window.location.href = 'https://github.com/login/oauth/authorize?client_id=02edf4e25d434e53b086&redirect_uri=https://sondoan1204-javatest.herokuapp.com/Oauth2git&scope=user';"><span><span>GitHub</span></span></button>
-                                </div>
+                                    <button type="button" title="Khởi tạo tài khoản" class="button" onclick="window.location.href = 'signup.jsp';"><span><span>Tạo tài khoản</span></span></button>
+                                hoặc
+                                <button style="background: #E9654C;" type="button" title="Đăng nhập tài khoản bằng Google" class="button" onclick="window.location.href = 'https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/Sandwich/OAuth2Callback&response_type=code&client_id=1072517011559-98o65aqld7in2j3du772p3uio5le3a2i.apps.googleusercontent.com&approval_prompt=force';"><span><span>Đăng nhập bằng Google</span></span></button>
                                 </div>
                                 
                             </div>
