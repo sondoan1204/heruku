@@ -7,7 +7,7 @@
 <%@page import="sandwich.productSW"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html xmlns:fb='http://www.facebook.com/2008/fbml' >
+<html>
     <%
         NumberFormat format = new DecimalFormat("###,###");
         productSW pd = new productSW();
