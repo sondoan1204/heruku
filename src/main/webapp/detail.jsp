@@ -27,11 +27,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title><%=product.getTen()%></title>
 
-        <!--<meta property="fb:app_id" content="429789270711609" />
-        <meta property="fb:admins" content="1362709700485306">-->
+        <meta property="fb:app_id" content="429789270711609" />
+        <meta property="fb:admins" content="1362709700485306">
 
- <meta property="fb:app_id" content="1843623115879835" />
-        <meta property="fb:admins" content="100013519901003">
+ <!--<meta property="fb:app_id" content="1843623115879835" />
+        <meta property="fb:admins" content="100013519901003">-->
 
         <meta property="og:url"           content="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" />
         <meta property="og:type"          content="website" />
@@ -74,7 +74,7 @@
 
 
 
-<div id="fb-root"></div>
+<!--<div id="fb-root"></div>
     <script>(function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id))
@@ -83,11 +83,11 @@
             js.id = id;
             js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=1843623115879835";
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+        }(document, 'script', 'facebook-jssdk'));</script>-->
     
 
 
-        <!--<div id="fb-root"></div>
+        <div id="fb-root"></div>
         <script>(function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id))
@@ -96,7 +96,7 @@
                 js.id = id;
                 js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=429789270711609";
                 fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>-->
+            }(document, 'script', 'facebook-jssdk'));</script>
 
 
         <jsp:include page="header.jsp"></jsp:include>
@@ -213,9 +213,9 @@
                         <div role="tabpanel" class="tab-pane" id="tab_2">
                             <div class="std">
 
-                                <!--<div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" data-width="760" data-num-posts="20"></div>-->
+                                <div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" data-width="760" data-num-posts="20"></div>
                            
-                           <div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" data-numposts="5"></div>
+                           <!--<div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" data-numposts="5"></div>-->
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab_3">
