@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html xmlns:fb='http://www.facebook.com/2008/fbml' >
     <%
+        String Url = request.getRequestURL() + "?" + request.getQueryString();
         NumberFormat format = new DecimalFormat("###,###");
         productSW pd = new productSW();
         products product = new products();
@@ -29,6 +30,8 @@
 
         <meta property="fb:app_id" content="429789270711609" />
         <meta property="fb:admins" content="1362709700485306">
+        <meta property="fb:admins" content="758010617700899">
+        <meta property="fb:admins" content="1367478993340204">
         <meta property="og:url"           content="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="<%=product.getTen()%>" />
@@ -166,13 +169,13 @@
                                     <a href='CartServlet?command=plus&productID=<%=product.getIDsp()%>&url=<%=a%>?product=<%=product.getIDct()%>' class="btn btn-primary addtocart">Mua hàng</a>
                                 </div>
                                 <div class="fb-like" data-href="https://sondoan1204-javatest.herokuapp.com/detail.jsp?product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-<!--
-                                Thêm nút like ở đây
-                                <div class="fb-share-button" 
-                                     data-href="https://sondoan1204-javatest.herokuapp.com/detail.jsp?product=<%=product.getIDsp()%>" 
-                                     data-layout="button_count">
-                                </div>-->
-                              <!--                                <div class="fb-like" data-href="http://minhduc.com/detail.jsp?product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>-->
+                                <!--
+                                                                Thêm nút like ở đây
+                                                                <div class="fb-share-button" 
+                                                                     data-href="https://sondoan1204-javatest.herokuapp.com/detail.jsp?product=<%=product.getIDsp()%>" 
+                                                                     data-layout="button_count">
+                                                                </div>-->
+                                                              <!--                                <div class="fb-like" data-href="http://minhduc.com/detail.jsp?product=<%=product.getIDsp()%>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>-->
                                 <div class="addthis">
                                     <script type="text/javascript" src="../s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5620cf1235df3004" async="async"></script>	
                                     <div class="addthis_native_toolbox"></div>
@@ -197,6 +200,7 @@
                             <div class="std">
 
                                 <div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" data-width="760" data-num-posts="20"></div>
+                               
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab_3">
