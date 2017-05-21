@@ -7,7 +7,7 @@
 <%@page import="sandwich.productSW"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html xmlns:fb='http://www.facebook.com/2008/fbml' >
     <%
         NumberFormat format = new DecimalFormat("###,###");
         productSW pd = new productSW();
@@ -29,10 +29,6 @@
 
         <meta property="fb:app_id" content="429789270711609" />
         <meta property="fb:admins" content="1362709700485306">
-
- <!--<meta property="fb:app_id" content="1843623115879835" />
-        <meta property="fb:admins" content="100013519901003">-->
-
         <meta property="og:url"           content="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="<%=product.getTen()%>" />
@@ -72,19 +68,6 @@
                     fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));</script>-->
 
-
-
-<!--<div id="fb-root"></div>
-    <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id))
-                return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=1843623115879835";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>-->
-    
 
 
         <div id="fb-root"></div>
@@ -214,8 +197,6 @@
                             <div class="std">
 
                                 <div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" data-width="760" data-num-posts="20"></div>
-                           
-                           <!--<div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" data-numposts="5"></div>-->
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab_3">
