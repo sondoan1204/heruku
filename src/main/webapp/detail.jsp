@@ -31,7 +31,7 @@
                                             <%=product.getTen()%>
                                         </title>
 
-                                        <!--<meta property="fb:app_id" content="429789270711609" />-->
+                                        <meta property="fb:app_id" content="429789270711609" />
                                         <meta property="fb:admins" content="1362709700485306">
                                         <meta property="fb:admins" content="758010617700899">
                                         <meta property="fb:admins" content="1367478993340204">
@@ -78,7 +78,7 @@
 
 
                                         <div id="fb-root"></div>
-                                        <!--<script>
+                                        <script>
                                             (function (d, s, id) {
                                                 var js, fjs = d.getElementsByTagName(s)[0];
                                                 if (d.getElementById(id))
@@ -86,12 +86,12 @@
                                                 js = d.createElement(s);
                                                 js.id = id;
                                                 js.src =
-                                                    "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=429789270711609";
+                                                    "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=429789270711609";
                                                 fjs.parentNode.insertBefore(js, fjs);
                                             }(document, 'script', 'facebook-jssdk'));
-                                        </script>-->
+                                        </script>
 
-                                        <script>
+                                        <!--<script>
                                             window.fbAsyncInit = function () {
                                                 FB.init({
                                                     appId: '429789270711609',
@@ -111,7 +111,7 @@
                                                 js.src = "//connect.facebook.net/en_US/sdk.js";
                                                 fjs.parentNode.insertBefore(js, fjs);
                                             }(document, 'script', 'facebook-jssdk'));
-                                        </script>
+                                        </script>-->
 
                                         <jsp:include page="header.jsp"></jsp:include>
                                         <section class="sub-top-bn">
