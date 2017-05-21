@@ -28,10 +28,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title><%=product.getTen()%></title>
 
-        <meta property="fb:app_id" content="429789270711609" />
-        <!--<meta property="fb:admins" content="1362709700485306">
+        <!--<meta property="fb:app_id" content="429789270711609" />-->
+        <meta property="fb:admins" content="1362709700485306">
         <meta property="fb:admins" content="758010617700899">
-        <meta property="fb:admins" content="1367478993340204">-->
+        <meta property="fb:admins" content="1367478993340204">
         <meta property="og:url"           content="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="<%=product.getTen()%>" />
