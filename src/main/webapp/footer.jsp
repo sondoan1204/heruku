@@ -9,33 +9,33 @@
         <%
             informationSW infoSw = new informationSW();
             information info = new information();
-            info = infoSw.getInformationDetail();        
+            info = infoSw.getInformationDetail();
         %>
-//        <div id="fb-root"></div>
-//    <script>
-//        window.fbAsyncInit = function() {
-//            FB.init({
-//                appId: '654574901370210',
-//                status : true, // check login status
-//                cookie : true, // enable cookies to allow the server to access the session
-//                xfbml: true // parse XFBML
-//            });
-//            };
-//            (function() {
-//                var e = document.createElement('script');
-//                e.src = document.location.protocol + '//connect.facebook.net/vi_VN/all.js';
-//                e.async = true;
-//                document.getElementById('fb-root').appendChild(e);
-//            }());
-//            </script>
-//    <script>
-//(function (d, s, id) {
-//    var js, fjs = d.getElementsByTagName(s)[0];
-//    if (d.getElementById(id)) return;
-//    js = d.createElement(s); js.id = id;
-//    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.7&appId=825850937514684";
-//    fjs.parentNode.insertBefore(js, fjs);
-//}(document, 'script', 'facebook-jssdk'));</script>
+        //        <div id="fb-root"></div>
+        //    <script>
+            //        window.fbAsyncInit = function() {
+            //            FB.init({
+            //                appId: '654574901370210',
+            //                status : true, // check login status
+            //                cookie : true, // enable cookies to allow the server to access the session
+            //                xfbml: true // parse XFBML
+            //            });
+            //            };
+            //            (function() {
+            //                var e = document.createElement('script');
+            //                e.src = document.location.protocol + '//connect.facebook.net/vi_VN/all.js';
+            //                e.async = true;
+            //                document.getElementById('fb-root').appendChild(e);
+            //            }());
+            //            </script>
+        //    <script>
+            //(function (d, s, id) {
+            //    var js, fjs = d.getElementsByTagName(s)[0];
+            //    if (d.getElementById(id)) return;
+            //    js = d.createElement(s); js.id = id;
+            //    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.7&appId=825850937514684";
+            //    fjs.parentNode.insertBefore(js, fjs);
+            //}(document, 'script', 'facebook-jssdk'));</script>
         <footer class="footer">
             <div class="container">
                 <div class="top-footer row">
@@ -104,7 +104,7 @@
                                         <a href="http://big-food.bizwebvietnam.net/huong-dan"><span>Giao hàng và thanh toán</span></a>
                                     </li>
                                 </ul>
-                           </div>
+                            </div>
                             <!--<div class="col-md-3 col-sm-6 foo-col">
                                 <div class="foo-mdl-title">
                                     <h2>Hướng dẫn</h2>
@@ -151,6 +151,19 @@
                 </div>
             </div>
         </footer>
-
+        <!-- Start of LiveChat (www.livechatinc.com) code -->
+        <script type="text/javascript">
+            window.__lc = window.__lc || {};
+            window.__lc.license = 8841961;
+            (function () {
+                var lc = document.createElement('script');
+                lc.type = 'text/javascript';
+                lc.async = true;
+                lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(lc, s);
+            })();
+        </script>
+        <!-- End of LiveChat code -->
     </body>
 </html>
