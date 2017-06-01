@@ -15,6 +15,8 @@
     <link href='css/css-main-stylesefbf.css' rel='stylesheet' type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=latin,vietnamese' rel='stylesheet' type='text/css'>
     <script src='scripts/jquery-1.9.1.minefbf.js' type='text/javascript'></script>
+    <!--google recapcha v2-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>
@@ -63,13 +65,17 @@
                                         </li>
                                     </ul>                                       
                                 </div>
+                                <%if (request.getAttribute("verified") != null) {%>
+                                <p style="color:red"><%=request.getAttribute("verified")%></p>
+                                <%}%>
+                                <div class="g-recaptcha" data-sitekey="6Le5yyMUAAAAAD2gXDBeluFCWJdAvKsrQ4kikIxv"></div>
                                 <div class="buttons-set">
                                     <input type="hidden" value="login" name="command">
                                     <button type="submit" class="button" title="Login">
                                         <span>Đăng nhập</span>
                                     </button>
                                     <a href="javascript:void(0);" onclick="showRecoverPasswordForm()" class="f-left">Quên mật khẩu?</a>
-                                    
+
                                 </div>
                             </div>
                             <div class="col-md-6 new-users">
@@ -81,15 +87,15 @@
                                 </div>
                                 <div class="buttons-set" style="text-align: center">
                                     <button type="button" title="Khởi tạo tài khoản" class="button" onclick="window.location.href = 'signup.jsp';"><span><span>Tạo tài khoản</span></span></button>
-                                
+
                                     </br> ------ hoặc Đăng nhập bằng ------</br>
-                                <div class="buttons-set">
-                                <button style="background: #E9654C;" type="button" title="Đăng nhập tài khoản bằng Google" class="button" onclick="window.location.href = 'https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=https://sondoan1204-javatest.herokuapp.com/OAuth2Callback&response_type=code&client_id=1072517011559-98o65aqld7in2j3du772p3uio5le3a2i.apps.googleusercontent.com&approval_prompt=force';"><span><span>Google</span></span></button>
-                                <button style="background: #3b5998;" type="button" title="Đăng nhập tài khoản bằng Facebook" class="button" onclick="window.location.href = 'https://www.facebook.com/dialog/oauth?client_id=429789270711609&redirect_uri=https://sondoan1204-javatest.herokuapp.com/OAuth2fb&scope=email&scope=user_friends';"><span><span>Facebook</span></span></button>                                
-                                <button style="background: #333;" type="button" title="Đăng nhập tài khoản bằng GitHub" class="button" onclick="window.location.href = 'https://github.com/login/oauth/authorize?client_id=02edf4e25d434e53b086&redirect_uri=https://sondoan1204-javatest.herokuapp.com/Oauth2git&scope=user';"><span><span>GitHub</span></span></button>
+                                    <div class="buttons-set">
+                                        <button style="background: #E9654C;" type="button" title="Đăng nhập tài khoản bằng Google" class="button" onclick="window.location.href = 'https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=https://sondoan1204-javatest.herokuapp.com/OAuth2Callback&response_type=code&client_id=1072517011559-98o65aqld7in2j3du772p3uio5le3a2i.apps.googleusercontent.com&approval_prompt=force';"><span><span>Google</span></span></button>
+                                        <button style="background: #3b5998;" type="button" title="Đăng nhập tài khoản bằng Facebook" class="button" onclick="window.location.href = 'https://www.facebook.com/dialog/oauth?client_id=429789270711609&redirect_uri=http://localhost:8080/Sandwich/OAuth2fb&scope=email&scope=user_friends';"><span><span>Facebook</span></span></button>                                
+                                        <button style="background: #333;" type="button" title="Đăng nhập tài khoản bằng GitHub" class="button" onclick="window.location.href = 'https://github.com/login/oauth/authorize?client_id=02edf4e25d434e53b086&redirect_uri=https://sondoan1204-javatest.herokuapp.com/Oauth2git&scope=user';"><span><span>GitHub</span></span></button>
+                                    </div>
                                 </div>
-                                </div>
-                                
+
                             </div>
                         </div>
                     </form>

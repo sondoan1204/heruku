@@ -11,31 +11,33 @@
             information info = new information();
             info = infoSw.getInformationDetail();
         %>
-        //        <div id="fb-root"></div>
-        //    <script>
-            //        window.fbAsyncInit = function() {
-            //            FB.init({
-            //                appId: '654574901370210',
-            //                status : true, // check login status
-            //                cookie : true, // enable cookies to allow the server to access the session
-            //                xfbml: true // parse XFBML
-            //            });
-            //            };
-            //            (function() {
-            //                var e = document.createElement('script');
-            //                e.src = document.location.protocol + '//connect.facebook.net/vi_VN/all.js';
-            //                e.async = true;
-            //                document.getElementById('fb-root').appendChild(e);
-            //            }());
-            //            </script>
-        //    <script>
-            //(function (d, s, id) {
-            //    var js, fjs = d.getElementsByTagName(s)[0];
-            //    if (d.getElementById(id)) return;
-            //    js = d.createElement(s); js.id = id;
-            //    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.7&appId=825850937514684";
-            //    fjs.parentNode.insertBefore(js, fjs);
-            //}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="fb-root"></div>
+<!--        <script>
+                    window.fbAsyncInit = function() {
+                        FB.init({
+                            appId: '654574901370210',
+                            status : true, // check login status
+                            cookie : true, // enable cookies to allow the server to access the session
+                            xfbml: true // parse XFBML
+                        });
+                        };
+                        (function() {
+                            var e = document.createElement('script');
+                            e.src = document.location.protocol + '//connect.facebook.net/vi_VN/all.js';
+                            e.async = true;
+                            document.getElementById('fb-root').appendChild(e);
+                        }());
+                        
+                </script>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.7&appId=825850937514684";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>-->
         <footer class="footer">
             <div class="container">
                 <div class="top-footer row">
