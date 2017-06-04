@@ -130,14 +130,14 @@
                                                 
                                                 <!--<input  id="file123" type="file" class="form-control" name="uploadFile" accept="image/*" required >-->
                                             </div>
-                                            <div class="form-group">
+<!--                                            <div class="form-group">
                                                 <label>Sub1</label>
                                                 <input type="file" class="form-control" name="hinh2" accept="image/*" id="file2" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>Sub2</label>
                                                 <input type="file" class="form-control" name="hinh3" accept="image/*" id="file3" required>
-                                            </div>
+                                            </div>-->
                                             <div class="form-group">
                                                 <label>Phân loại</label>
                                                 <label class="checkbox-inline">

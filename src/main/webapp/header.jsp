@@ -173,7 +173,7 @@
                                 <a href="trang-chu"><span>Trang chủ</span></a>
                             </li>
                             <li class="">
-                                <a href="#"><span>Giới thiệu</span></a>
+                                <a href="gioithieu.jsp"><span>Giới thiệu</span></a>
                             </li>
                             <li class=" sub-menu"><a href="tat-ca-san-pham"><span>Sản phẩm</span></a>
                                 <ul class="list-unstyled">

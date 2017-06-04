@@ -236,7 +236,7 @@
                                 <div class="product-grid">
                                     <div class="feature-img">
                                         <a href="detail.jsp?product=<%=p.getIDsp()%>">
-                                            <img src="images-product/<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
+                                            <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                         </a>
                                         <div class="grid-action-box">
                                             <form action="" class="product_item_form" method="post">	
