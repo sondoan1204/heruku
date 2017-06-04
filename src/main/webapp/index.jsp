@@ -84,7 +84,7 @@
                                             <div class="product-grid">
                                                 <div class="feature-img">
                                                     <a href="detail.jsp?product=<%=p.getIDsp()%>">
-                                                        <img src="images-product/<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
+                                                        <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                                     </a>
                                                     <div class="grid-action-box">
                                                         <a href='CartServlet?command=plus&productID=<%=p.getIDsp()%>&url=<%=q%>' class="btn btn-primary ">Mua hàng</a>
