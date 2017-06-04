@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="content-language" content="vi">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>Giỏ hàng | Big food</title>
+        <title>Giỏ hàng | Sandwich Chía Núi</title>
         <!-- *** Site Style ***-->
         <link href='css/bootstrapefbf.css' rel='stylesheet' type='text/css' />
         <link href='css/font-awesomeefbf.css' rel='stylesheet' type='text/css' />
@@ -97,13 +97,13 @@
                                 <form action="CartServlet?command=update&productID=<%=list.getValue().getProduct().getIDsp()%>&url=<%=a%>" method="post">
                                     <tr class="first">
                                         <td>
-                                            <a href="detail.jsp?product=<%=list.getValue().getProduct().getIDsp()%>" title="<%=list.getValue().getProduct().getTen()%>" class="product-image">
+                                            <a href="chi-tiet-<%=list.getValue().getProduct().getIDsp()%>" title="<%=list.getValue().getProduct().getTen()%>" class="product-image">
                                                 <img alt="<%=list.getValue().getProduct().getTen()%>" src="<%=list.getValue().getProduct().getAnhbia()%>" width="150" height="150">
                                             </a>
                                         </td>
                                         <td>
                                             <h2 class="product-name">
-                                                <a href="detail.jsp?product=<%=list.getValue().getProduct().getIDsp()%>"><%=list.getValue().getProduct().getTen()%></a>
+                                                <a href="chi-tiet-<%=list.getValue().getProduct().getIDsp()%>"><%=list.getValue().getProduct().getTen()%></a>
                                             </h2>
                                         </td>
                                         <td class="a-right">
@@ -153,7 +153,7 @@
                             <%for (Map.Entry<Long, item> list : cart.getCartItems().entrySet()) {%>
                             <li class="cart_collection-item avatar">
                                 <img alt="<%=list.getValue().getProduct().getTen()%>" src="<%=list.getValue().getProduct().getAnhbia()%>" class="circle img-responsive">
-                                <a href="detail.jsp?product=<%=list.getValue().getProduct().getIDsp()%>" title="<%=list.getValue().getProduct().getTen()%>"><%=list.getValue().getProduct().getTen()%></a>
+                                <a href="chi-tiet-<%=list.getValue().getProduct().getIDsp()%>" title="<%=list.getValue().getProduct().getTen()%>"><%=list.getValue().getProduct().getTen()%></a>
                                 <p>
                                     <%if (list.getValue().getProduct().getTTkm() == true) {%>
                                     <%=format.format(list.getValue().getProduct().getGiakm())%>₫

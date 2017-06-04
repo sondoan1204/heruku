@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="content-language" content="vi">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>Đăng ký | Big food</title>
+        <title>Đăng ký | Sandwich Chía Núi</title>
         <!-- *** Site Style ***-->
         <link href='css/bootstrapefbf.css' rel='stylesheet' type='text/css' />
         <link href='css/font-awesomeefbf.css' rel='stylesheet' type='text/css' />

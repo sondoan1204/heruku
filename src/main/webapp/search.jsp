@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="content-language" content="vi">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>Sản phẩm | Big food</title>
+        <title>Sản phẩm | Sandwich Chía Núi</title>
         <!-- *** Site Style ***-->
         <link href='css/bootstrapefbf.css' rel='stylesheet' type='text/css' />
         <link href='css/font-awesomeefbf.css' rel='stylesheet' type='text/css' />
@@ -106,7 +106,7 @@
                                     <div class="col-md-4 col-sm-6 col-xs-12">
                                         <div class="product-grid">
                                             <div class="feature-img">
-                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                                <a href="chi-tiet-<%=p.getIDsp()%>">
                                                     <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                                 </a>
                                                     <div class="grid-action-box">
@@ -139,7 +139,7 @@
                                                 </div>
                                                 <%}%>
 
-                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                                <a href="chi-tiet-<%=p.getIDsp()%>">
                                                     <h3><%=p.getTen()%></h3>
                                                 </a>
                                             </div>
@@ -157,12 +157,12 @@
 
                                 <div class="product-grid clearfix">
                                     <div class="feature-img">
-                                        <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                        <a href="chi-tiet-<%=p.getIDsp()%>">
                                             <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                         </a>
                                     </div>
                                     <div class="prod-info">
-                                        <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                        <a href="chi-tiet-<%=p.getIDsp()%>">
                                             <h3><%=p.getTen()%></h3>
                                         </a>
                                         <div class="desc">

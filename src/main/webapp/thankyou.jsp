@@ -15,7 +15,7 @@
         <link href="css/font-awesome.min58d8.css" rel="stylesheet" type="text/css"/>
         <link href="css/checkoutf4d8.css" rel="stylesheet" type="text/css"/>
         <link href="css/thankyou_v2.css" rel="stylesheet" type="text/css"/> 
-        <title>Sandwich Chía Núi | Cảm ơn</title>
+        <title>Cảm ơn | Sandwich Chía Núi</title>
     </head>
     <body>
         <%

@@ -104,7 +104,7 @@
                                     <div class="col-md-4 col-sm-6 col-xs-12">
                                         <div class="product-grid">
                                             <div class="feature-img">
-                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                                <a href="chi-tiet-<%=p.getIDsp()%>">
                                                     <img src="images-product/<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                                 </a>
                                                     <div class="grid-action-box">
@@ -137,7 +137,7 @@
                                                 </div>
                                                 <%}%>
 
-                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                                <a href="chi-tiet-<%=p.getIDsp()%>">
                                                     <h3><%=p.getTen()%></h3>
                                                 </a>
                                             </div>
@@ -155,12 +155,12 @@
 
                                 <div class="product-grid clearfix">
                                     <div class="feature-img">
-                                        <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                        <a href="chi-tiet-<%=p.getIDsp()%>">
                                             <img src="images-product/<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                         </a>
                                     </div>
                                     <div class="prod-info">
-                                        <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                        <a href="chi-tiet-<%=p.getIDsp()%>">
                                             <h3><%=p.getTen()%></h3>
                                         </a>
                                         <div class="desc">

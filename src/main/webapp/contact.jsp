@@ -9,7 +9,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="content-language" content="vi">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>Liên hệ | Big food</title>
+        <title>Liên hệ | Sandwich Chía Núi</title>
         <!-- *** Site Style ***-->
         <link href='css/bootstrapefbf.css' rel='stylesheet' type='text/css' />
         <link href='css/font-awesomeefbf.css' rel='stylesheet' type='text/css' />
@@ -33,7 +33,7 @@
                 <div class="container">
                     <ul class="breadcrumb">
                         <li>
-                            <a title="Trở lại trang chủ" href="index.jsp" >Trang chủ</a>
+                            <a title="Trở lại trang chủ" href="trang-chu" >Trang chủ</a>
                         </li>
                         <li class="active">Liên hệ</li>
                     </ul>

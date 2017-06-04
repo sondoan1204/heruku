@@ -24,11 +24,11 @@
                             {break;}
                     %>
                     <li class="prod-list clearfix">
-                        <a href="detail.jsp">
+                        <a href="chi-tiet-<%=p.getIDsp()%>">
                             <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>">
                         </a>
                         <div class="prod-info">
-                            <a href="detail.jsp"><h3><%=p.getTen()%></h3></a>
+                            <a href="chi-tiet-<%=p.getIDsp()%>"><h3><%=p.getTen()%></h3></a>
 
                             <%if (p.getTTkm() == true) {%>
                             <div class="price-box">

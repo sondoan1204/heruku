@@ -83,7 +83,7 @@
                                         <div class="col-sm-4 col-xs-6 col-xs-small-1">
                                             <div class="product-grid">
                                                 <div class="feature-img">
-                                                    <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                                    <a href="chi-tiet-<%=p.getIDsp()%>">
                                                         <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                                     </a>
                                                     <div class="grid-action-box">
@@ -107,7 +107,7 @@
                                                         </p>
                                                     </div>
                                                     <%}%>
-                                                    <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                                    <a href="chi-tiet-<%=p.getIDsp()%>">
                                                         <h3><%=p.getTen()%></h3>
                                                     </a>
                                                 </div>
@@ -141,7 +141,7 @@
                                     <div class="col-md-12">
                                         <div class="product-grid">
                                             <div class="feature-img">
-                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                                <a href="chi-tiet-<%=p.getIDsp()%>">
                                                     <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                                 </a>
                                                 <div class="grid-action-box">
@@ -167,7 +167,7 @@
                                                 </div>
                                                 <%}%>
 
-                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                                <a href="chi-tiet-<%=p.getIDsp()%>">
                                                     <h3><%=p.getTen()%></h3>
                                                 </a>
                                             </div>
@@ -203,7 +203,7 @@
                                     <div class="col-md-12">
                                         <div class="product-grid">
                                             <div class="feature-img">
-                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                                <a href="chi-tiet-<%=p.getIDsp()%>">
                                                     <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                                 </a>
                                                 <div class="grid-action-box">
@@ -227,7 +227,7 @@
                                                     </p>
                                                 </div>
                                                 <%}%>
-                                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                                <a href="chi-tiet-<%=p.getIDsp()%>">
                                                     <h3><%=p.getTen()%></h3>
                                                 </a>
                                             </div>

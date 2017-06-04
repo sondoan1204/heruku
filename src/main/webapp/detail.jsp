@@ -199,7 +199,7 @@
                         <div role="tabpanel" class="tab-pane" id="tab_2">
                             <div class="std">
 
-                                <div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/detail.jsp?product=<%=product.getIDsp()%>" data-width="760" data-num-posts="20"></div>
+                                <div class="fb-comments" data-href="https://sondoan1204-javatest.herokuapp.com/detail.jsp?product=<%=product.getIDsp()%>" data-width="100%" data-num-posts="20"></div>
                                
                             </div>
                         </div>

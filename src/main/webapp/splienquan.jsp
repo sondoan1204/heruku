@@ -26,7 +26,7 @@
                     <div class="col-md-12">
                         <div class="product-grid">
                             <div class="feature-img">
-                                <a href="detail.jsp?product=<%=p.getIDsp()%>">
+                                <a href="chi-tiet-<%=p.getIDsp()%>">
                                     <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                 </a>
                                 <div class="grid-action-box">
