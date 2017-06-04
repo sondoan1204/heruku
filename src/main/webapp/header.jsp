@@ -98,7 +98,7 @@
                                                     <img class="item-remove" src="images/itemclose.png">
                                                 </a>
                                                 <div class="col-md-10 cart-left">
-                                                    <img src="images-product/<%=list.getValue().getProduct().getAnhbia()%>" alt="<%=list.getValue().getProduct().getTen()%>"/>                                                    
+                                                    <img src="<%=list.getValue().getProduct().getAnhbia()%>" alt="<%=list.getValue().getProduct().getTen()%>"/>                                                    
                                                 </div>
                                                 <div class="col-md-14 cart-right">
                                                     <div class="cart-title">

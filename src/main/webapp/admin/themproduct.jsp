@@ -30,29 +30,29 @@
         <script src="../admin/js/jquery-1.11.0.js" type="text/javascript"></script>
         <script type="text/javascript">
             $('#submit').click(function () {
-                //kiem tra trinh duyet co ho tro File API
-                if (window.File && window.FileReader && window.FileList && window.Blob)
-                {
-                    // lay dung luong va kieu file tu the input file
-                    var ftype1 = $('#file1')[0].files[0].type;
-                    //var ftype2 = $('#file2')[0].files[1].type;
-                    //var ftype3 = $('#file3')[0].files[2].type;
+            //kiem tra trinh duyet co ho tro File API
+            if (window.File && window.FileReader && window.FileList && window.Blob)
+            {
+            // lay dung luong va kieu file tu the input file
+            var ftype1 = $('#file1')[0].files[0].type;
+            //var ftype2 = $('#file2')[0].files[1].type;
+            //var ftype3 = $('#file3')[0].files[2].type;
 
 
-                    switch (ftype1)
-                    {
-                        case 'image/png':
-                        case 'image/gif':
-                        case 'image/jpeg':
-                        case 'image/pjpeg':
-                            break;
-                        default:
-                            alert('Vui lòng chọn file ảnh!');
-                    }
+            switch (ftype1)
+            {
+            case 'image/png':
+                    case 'image/gif':
+                    case 'image/jpeg':
+                    case 'image/pjpeg':
+                    break;
+            default:
+                    alert('Vui lòng chọn file ảnh!');
+            }
 
-                } else {
-                    alert("Trình duyệt ko hỗ trợ upload file, vui lòng nâng cấp trình duyệt");
-                }
+            } else {
+            alert("Trình duyệt ko hỗ trợ upload file, vui lòng nâng cấp trình duyệt");
+            }
             });
         </script>
     </head>
@@ -124,7 +124,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Hình đại diện</label>
-                                                <input  id="file123" type="file" class="form-control" name="uploadFile" accept="image/*" required >
+                                                <input type="text" class="form-control" ID="imgURL" name="uploadFile" placeholder="URL" required="">
+                                                <input type="file" id="filePicker" style="display: none" />
+                                                <input type="button" id="authorizeButton" style="display: none" value="Authorize" />
+                                                
+                                                <!--<input  id="file123" type="file" class="form-control" name="uploadFile" accept="image/*" required >-->
                                             </div>
                                             <div class="form-group">
                                                 <label>Sub1</label>
@@ -166,7 +170,141 @@
                                     </div>
                                 </div>
                             </div> 
-                        </form>
+<!--                        </form>
+                        <img src="https://drive.google.com/uc?id=0B2xIzP693TX3V2E3dUtldWVxNzA" alt="">-->
+                        <div id="authorize-div" style="display: none">
+                            <span>Authorize access to Drive API</span>
+                            <!--Button for the user to click to initiate auth sequence -->
+                            <button id="authorize-button" onclick="handleAuthClick(event)">
+                                Authorize
+                            </button>
+                        </div>
+                        <pre id="output"></pre>
+
+
+                        <script type="text/javascript">
+                            var CLIENT_ID = '1096174929497-ipubrn1gmtl0ehq44bgo9kn529hc3drp.apps.googleusercontent.com';
+                            var SCOPES = 'https://www.googleapis.com/auth/drive';
+                            /**
+                             * Called when the client library is loaded to start the auth flow.
+                             */
+                            function handleClientLoad() {
+                            window.setTimeout(checkAuth, 1);
+                            }
+
+                            /**
+                             * Check if the current user has authorized the application.
+                             */
+                            function checkAuth() {
+                            gapi.auth.authorize({
+                            'client_id': CLIENT_ID,
+                                    'scope': SCOPES,
+                                    'immediate': true
+                            },
+                                    handleAuthResult);
+                            }
+
+                            /**
+                             * Called when authorization server replies.
+                             *
+                             * @param {Object} authResult Authorization result.
+                             */
+                            function handleAuthResult(authResult) {
+                            var authButton = document.getElementById('authorizeButton');
+                            var filePicker = document.getElementById('filePicker');
+                            authButton.style.display = 'none';
+                            filePicker.style.display = 'none';
+                            if (authResult && !authResult.error) {
+                            // Access token has been successfully retrieved, requests can be sent to the API.
+                            filePicker.style.display = 'block';
+                            filePicker.onchange = uploadFile;
+                            } else {
+                            // No access token could be retrieved, show the button to start the authorization flow.
+                            authButton.style.display = 'block';
+                            authButton.onclick = function () {
+                            gapi.auth.authorize({
+                            'client_id': CLIENT_ID,
+                                    'scope': SCOPES,
+                                    'immediate': false
+                            },
+                                    handleAuthResult);
+                            };
+                            }
+                            }
+
+                            /**
+                             * Start the file upload.
+                             *
+                             * @param {Object} evt Arguments from the file selector.
+                             */
+                            function uploadFile(evt) {
+                            gapi.client.load('drive', 'v2', function () {
+                            var file = evt.target.files[0];
+                            insertFile(file);
+                            });
+                            }
+
+
+                            /**
+                             * Insert new file.
+                             *
+                             * @param {File} fileData File object to read data from.
+                             * @param {Function} callback Function to call when the request is complete.
+                             */
+                            function insertFile(fileData, callback) {
+                            const boundary = '-------314159265358979323846';
+                            const delimiter = "\r\n--" + boundary + "\r\n";
+                            const close_delim = "\r\n--" + boundary + "--";
+                            var reader = new FileReader();
+                            reader.readAsBinaryString(fileData);
+                            reader.onload = function (e) {
+                            var contentType = fileData.type || 'application/octet-stream';
+                            var metadata = {
+                            'title': fileData.name,
+                                    'mimeType': contentType,
+                                    'parents': [{
+                                    'id': '0B2xIzP693TX3anlkWnA4eElod2c'
+                                    }]
+                            };
+                            var base64Data = btoa(reader.result);
+                            var multipartRequestBody =
+                                    delimiter +
+                                    'Content-Type: application/json\r\n\r\n' +
+                                    JSON.stringify(metadata) +
+                                    delimiter +
+                                    'Content-Type: ' + contentType + '\r\n' +
+                                    'Content-Transfer-Encoding: base64\r\n' +
+                                    '\r\n' +
+                                    base64Data +
+                                    close_delim;
+                            var request = gapi.client.request({
+                            'path': '/upload/drive/v2/files',
+                                    'method': 'POST',
+                                    'params': {
+                                    'uploadType': 'multipart'
+                                    },
+                                    'headers': {
+                                    'Content-Type': 'multipart/mixed; boundary="' + boundary + '"'
+                                    },
+                                    'body': multipartRequestBody
+                            });
+                            if (!callback) {
+                            callback = function (file) {
+                            console.log(file.thumbnailLink)
+                                    $("#imgURL").val(file.id)
+                            };
+                            }
+                            request.execute(callback);
+                            }
+                            }
+                        </script>
+                        <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+<!--                        <div class="form-group">
+                            <label>Hình đại diện</label>
+                            <input type="text" class="form-control" ID="imgURL" name="uploadFile" placeholder="URL" required="">
+                            <input type="file" id="filePicker" style="display: none" />
+                            <input type="button" id="authorizeButton" style="display: none" value="Authorize" />
+                        </div>-->
                     </div>
                 </div>
             </div>

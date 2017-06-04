@@ -67,7 +67,7 @@
                                                                 <li class="product product-has-image clearfix">
                                                                     <div class="product-thumbnail pull-left">
                                                                         <div class="product-thumbnail__wrapper">                                                                
-                                                                            <img src='images-product/<%=list.getValue().getProduct().getAnhbia()%>' alt='<%=list.getValue().getProduct().getTen()%>' class='product-thumbnail__image' />
+                                                                            <img src='<%=list.getValue().getProduct().getAnhbia()%>' alt='<%=list.getValue().getProduct().getTen()%>' class='product-thumbnail__image' />
                                                                         </div>
                                                                         <span class="product-thumbnail__quantity" aria-hidden="true"><%=list.getValue().getQuantity()%></span>
                                                                     </div>

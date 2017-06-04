@@ -25,7 +25,7 @@
                     %>
                     <li class="prod-list clearfix">
                         <a href="detail.jsp">
-                            <img src="images-product/<%=p.getAnhbia()%>" alt="<%=p.getTen()%>">
+                            <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>">
                         </a>
                         <div class="prod-info">
                             <a href="detail.jsp"><h3><%=p.getTen()%></h3></a>

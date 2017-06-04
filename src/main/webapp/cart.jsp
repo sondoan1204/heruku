@@ -98,7 +98,7 @@
                                     <tr class="first">
                                         <td>
                                             <a href="detail.jsp?product=<%=list.getValue().getProduct().getIDsp()%>" title="<%=list.getValue().getProduct().getTen()%>" class="product-image">
-                                                <img alt="<%=list.getValue().getProduct().getTen()%>" src="images-product/<%=list.getValue().getProduct().getAnhbia()%>" width="150" height="150">
+                                                <img alt="<%=list.getValue().getProduct().getTen()%>" src="<%=list.getValue().getProduct().getAnhbia()%>" width="150" height="150">
                                             </a>
                                         </td>
                                         <td>
@@ -152,7 +152,7 @@
                         <ul class="cart_collection">
                             <%for (Map.Entry<Long, item> list : cart.getCartItems().entrySet()) {%>
                             <li class="cart_collection-item avatar">
-                                <img alt="<%=list.getValue().getProduct().getTen()%>" src="images-product/<%=list.getValue().getProduct().getAnhbia()%>" class="circle img-responsive">
+                                <img alt="<%=list.getValue().getProduct().getTen()%>" src="<%=list.getValue().getProduct().getAnhbia()%>" class="circle img-responsive">
                                 <a href="detail.jsp?product=<%=list.getValue().getProduct().getIDsp()%>" title="<%=list.getValue().getProduct().getTen()%>"><%=list.getValue().getProduct().getTen()%></a>
                                 <p>
                                     <%if (list.getValue().getProduct().getTTkm() == true) {%>

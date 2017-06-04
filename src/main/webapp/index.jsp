@@ -13,12 +13,12 @@
         <meta http-equiv="content-language" content="vi">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Trang chủ | Sandwich Chía Núi</title>
-        
-        <meta property="og:title" content="Web đồ án JSP của Voi Ăn Gà">
-        <meta property="og:description" content="SANDWICH CHÍA NÚI mong muốn mang món Sandwich Truyền thống đã bị lãng quên bấy lâu đến mọi đối tượng khách hàng , đây hoàn toàn là một món ăn không thể bỏ qua đối với một người yêu fastfood như bạn !!!">
-        <meta property="og:url" content="https://www.facebook.com/minhduc.271293">
-        <meta property="og:site_name" content="Web đồ án JSP của Voi Ăn Gà">
-        <meta property="og:image" content="http://sandwichchianui.jelastic.skali.net/images/logo.png">
+
+        <!--        <meta property="og:title" content="Web đồ án JSP của Voi Ăn Gà">
+                <meta property="og:description" content="SANDWICH CHÍA NÚI mong muốn mang món Sandwich Truyền thống đã bị lãng quên bấy lâu đến mọi đối tượng khách hàng , đây hoàn toàn là một món ăn không thể bỏ qua đối với một người yêu fastfood như bạn !!!">
+                <meta property="og:url" content="https://www.facebook.com/minhduc.271293">
+                <meta property="og:site_name" content="Web đồ án JSP của Voi Ăn Gà">
+                <meta property="og:image" content="http://sandwichchianui.jelastic.skali.net/images/logo.png">-->
         <!-- *** Site Style ***-->
         <link href='css/bootstrapefbf.css' rel='stylesheet' type='text/css' />
         <link href='css/font-awesomeefbf.css' rel='stylesheet' type='text/css' />
@@ -29,7 +29,7 @@
         <script src='scripts/jquery-1.9.1.minefbf.js' type='text/javascript'></script>
     </head>
     <body>
-        <%            
+        <%
             cart cart = (cart) session.getAttribute("cart");
             if (cart == null) {
                 cart = new cart();
@@ -94,7 +94,7 @@
                                                     <%if (p.getTTkm() == true) {%>
                                                     <div class="price-box">
                                                         <p class="special-price">
-                                                            <span><%= format.format(p.getGiakm()) %>&#8363;</span>
+                                                            <span><%= format.format(p.getGiakm())%>&#8363;</span>
                                                         </p>
                                                         <p class="old-price">
                                                             <span><%= format.format(p.getGia())%>&#8363;</span>
@@ -142,7 +142,7 @@
                                         <div class="product-grid">
                                             <div class="feature-img">
                                                 <a href="detail.jsp?product=<%=p.getIDsp()%>">
-                                                    <img src="images-product/<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
+                                                    <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                                 </a>
                                                 <div class="grid-action-box">
                                                     <a href='CartServlet?command=plus&productID=<%=p.getIDsp()%>&url=<%=q%>' class="btn btn-primary ">Mua hàng</a>
@@ -153,7 +153,7 @@
                                                 <%if (p.getTTkm() == true) {%>
                                                 <div class="price-box">
                                                     <p class="special-price">
-                                                        <span><%= format.format(p.getGiakm()) %>&#8363;</span>
+                                                        <span><%= format.format(p.getGiakm())%>&#8363;</span>
                                                     </p>
                                                     <p class="old-price">
                                                         <span><%= format.format(p.getGia())%>&#8363;</span>
@@ -204,7 +204,7 @@
                                         <div class="product-grid">
                                             <div class="feature-img">
                                                 <a href="detail.jsp?product=<%=p.getIDsp()%>">
-                                                    <img src="images-product/<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
+                                                    <img src="<%=p.getAnhbia()%>" alt="<%=p.getTen()%>" class="img-responsive">
                                                 </a>
                                                 <div class="grid-action-box">
                                                     <a href='CartServlet?command=plus&productID=<%=p.getIDsp()%>&url=<%=q%>' class="btn btn-primary addtocart">Mua hàng</a>
@@ -214,7 +214,7 @@
                                                 <%if (p.getTTkm() == true) {%>
                                                 <div class="price-box">
                                                     <p class="special-price">
-                                                        <span><%= format.format(p.getGiakm()) %>&#8363;</span>
+                                                        <span><%= format.format(p.getGiakm())%>&#8363;</span>
                                                     </p>
                                                     <p class="old-price">
                                                         <span><%= format.format(p.getGia())%>&#8363;</span>
@@ -242,6 +242,7 @@
             </div>
         </div>			
     </section>
+ 
     <jsp:include page="brand.jsp"></jsp:include>
     <jsp:include page="footer.jsp"></jsp:include>
     <jsp:include page="copyright.jsp"></jsp:include>
@@ -251,6 +252,6 @@
     <script src='scripts/componentsefbf.js' type='text/javascript'></script>
     <script src='scripts/appefbf.js' type='text/javascript'></script>
     <script src='scripts/ajax-cartefbf.js' type='text/javascript'></script>
-    
+
 </body>
 </html>
