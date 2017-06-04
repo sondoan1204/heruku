@@ -86,7 +86,7 @@
                                                 <li class="product product-has-image clearfix">
                                                     <div class="product-thumbnail pull-left">
                                                         <div class="product-thumbnail__wrapper">
-                                                            <img src="images-product/<%=t.getAnh()%>" alt="<%=t.getTensp()%>" class="product-thumbnail__image">
+                                                            <img src="<%=t.getAnh()%>" alt="<%=t.getTensp()%>" class="product-thumbnail__image">
                                                         </div>
                                                         <span class="product-thumbnail__quantity unprint" aria-hidden="true"><%=t.getSl()%></span>
                                                     </div>
