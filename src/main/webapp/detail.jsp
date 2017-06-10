@@ -35,8 +35,8 @@
         <meta property="og:url"           content="https://sondoan1204-javatest.herokuapp.com/chi-tiet-<%=product.getIDsp()%>" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="<%=product.getTen()%>" />
-        <meta property="og:description"   content="Giá: <%=product.getMotangan()%>" />
-        <meta property="og:image"         content="https://sondoan1204-javatest.herokuapp.com/images-product/<%=product.getAnh2()%>" />
+        <meta property="og:description"   content="Mô tả: <%=product.getMotangan()%>" />
+        <meta property="og:image"         content="<%=product.getAnh2()%>" />
 
         <!-- *** Site Style ***-->
         <link href='css/bootstrapefbf.css' rel='stylesheet' type='text/css' />
