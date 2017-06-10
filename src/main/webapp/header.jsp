@@ -16,16 +16,6 @@
 
     </head>
     <body>
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-100687014-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
         <%
             NumberFormat format = new DecimalFormat("###,###");
             productSW pd = new productSW();
@@ -202,8 +192,11 @@
                             <li class="">
                                 <a href="tin-tuc"><span>Tin tức</span></a>
                             </li>
-                            <li class="last ">
+                            <li class="">
                                 <a href="lien-he"><span>Liên hệ</span></a>
+                            </li>
+                             <li class="last ">
+                                <a href="app-debug.apk"><span>Android App</span></a>
                             </li>
                         </ul>
                     </div>
@@ -302,8 +295,11 @@
                             <li class="">
                                 <a href="tin-tuc.html"><span>Tin tức</span></a>
                             </li>
-                            <li class="last ">
+                            <li class="">
                                 <a href="contact.jsp"><span>Liên hệ</span></a>
+                            </li>
+                            <li class="last ">
+                                <a href="app-debug.apk"><span>Android App</span></a>
                             </li>
                         </ul>
                     </div>
