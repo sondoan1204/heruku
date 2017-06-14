@@ -275,7 +275,7 @@
     color: black;
   }
 </style>
-        <script src="http://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
+<script src="shopify-buy.umd.polyfilled.min.js" type="text/javascript"></script>
         <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
         <script src="index.js" type="text/javascript"></script>
   
