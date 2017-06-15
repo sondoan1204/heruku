@@ -280,7 +280,7 @@
         <script src="index.js" type="text/javascript"></script>
   
   
-  <script id="CartItemTemplate" type="text/template">
+<!--  <script id="CartItemTemplate" type="text/template">
     <div class="cart-item">
       <div class="cart-item__img"></div>
       <div class="cart-item__content">
@@ -298,17 +298,17 @@
         </div>
       </div>
     </div>
-  </script>
+  </script>-->
     </head>
     <body>
   
-
+<!--
 
 
 
         <div class="cart js-active" style="z-index: 1000;">
 
-  <!-- .cart-section begin // cart header -->
+   .cart-section begin // cart header 
   <div class="cart-section cart-section--top">
     <h2 class="cart-title">Your cart</h2>
     <button class="btn--close">
@@ -316,15 +316,15 @@
       <span class="visuallyhidden">Close</span>
     </button>
   </div>
-  <!-- .cart-section end -->
+   .cart-section end 
 
-  <!-- .cart-form begin // cart body -->
+   .cart-form begin // cart body 
   <div class="cart-form">
     <div class="cart-item-container cart-section">
-      <!-- cart items will be added here -->
+       cart items will be added here 
     </div>
 
-    <!-- .cart-bottom begin -->
+     .cart-bottom begin 
     <div class="cart-bottom">
       <div class="cart-info clearfix cart-section">
         <div class="type--caps cart-info__total cart-info__small">Total</div>
@@ -338,10 +338,10 @@
         <input type="submit" class="btn btn--cart-checkout" id="checkout" name="checkout" value="Checkout">
       </div>
     </div>
-    <!-- .cart-bottom end -->
+     .cart-bottom end 
 
   </div>
-  <!-- .cart-form end -->
+   .cart-form end -->
 
 </div>
 
@@ -352,19 +352,19 @@
 		<div class="mdl-full-tle">
                         <img src="https://help.shopify.com/assets/shopify-full-color-black.svg" style="width: 150px;">
                         <!-- .cart-tab start -->
-  <button class="btn btn--cart-tab js-prevent-cart-listener">
+<!--  <button class="btn btn--cart-tab js-prevent-cart-listener">
     <span class="btn__counter"></span>
     <svg xmlns="http://www.w3.org/2000/svg" class="icon-cart icon-cart--side" viewBox="0 0 25 25" enable-background="new 0 0 25 25"><g fill="#fff"><path d="M24.6 3.6c-.3-.4-.8-.6-1.3-.6h-18.4l-.1-.5c-.3-1.5-1.7-1.5-2.5-1.5h-1.3c-.6 0-1 .4-1 1s.4 1 1 1h1.8l3 13.6c.2 1.2 1.3 2.4 2.5 2.4h12.7c.6 0 1-.4 1-1s-.4-1-1-1h-12.7c-.2 0-.5-.4-.6-.8l-.2-1.2h12.6c1.3 0 2.3-1.4 2.5-2.4l2.4-7.4v-.2c.1-.5-.1-1-.4-1.4zm-4 8.5v.2c-.1.3-.4.8-.5.8h-13l-1.8-8.1h17.6l-2.3 7.1z"></path><circle cx="9" cy="22" r="2"></circle><circle cx="19" cy="22" r="2"></circle></g></svg>
-  </button>
+  </button>-->
 		</div>
 		<div class="brand-owl">
-			<div class="item">
+<!--			<div class="item">
 			        <div class="product" id="buy-button-1">
     <img class="variant-image">
     <h1 class="product-title"></h1>
     <h2 class="variant-title"></h2>
     <h2 class="variant-price"></h2>
-    <!--<div class="variant-selectors"></div>-->
+    <div class="variant-selectors"></div>
     <button class="btn buy-button js-prevent-cart-listener">Add To Cart</button>
   </div>
 			</div>
@@ -374,7 +374,7 @@
     <h1 class="product-title"></h1>
     <h2 class="variant-title"></h2>
     <h2 class="variant-price"></h2>
-    <!--<div class="variant-selectors"></div>-->
+    <div class="variant-selectors"></div>
     <button class="btn buy-button js-prevent-cart-listener">Add To Cart</button>
   </div>
 			</div>
@@ -384,24 +384,318 @@
     <h1 class="product-title"></h1>
     <h2 class="variant-title"></h2>
     <h2 class="variant-price"></h2>
-    <!--<div class="variant-selectors"></div>-->
+    <div class="variant-selectors"></div>
     <button class="btn buy-button js-prevent-cart-listener">Add To Cart</button>
   </div>
+			</div>-->
+			<div class="item">
+				<div id='product-component-efba5ca2544'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'sondoan1204.myshopify.com',
+      apiKey: 'f30a17c50f17ae25a18e4bc122c0487d',
+      appId: '6',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: [11231250643],
+        node: document.getElementById('product-component-efba5ca2544'),
+        moneyFormat: '%7B%7Bamount_no_decimals_with_comma_separator%7D%7D%E2%82%AB',
+        options: {
+  "product": {
+    "variantId": "all",
+    "contents": {
+      "imgWithCarousel": false,
+      "variantTitle": false,
+      "description": false,
+      "buttonWithQuantity": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      }
+    }
+  },
+  "cart": {
+    "contents": {
+      "button": true
+    },
+    "styles": {
+      "footer": {
+        "background-color": "#ffffff"
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "variantTitle": false,
+      "buttonWithQuantity": true,
+      "button": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      }
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  }
+}
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
 			</div>
 			<div class="item">
-				<a href="#">
-					<img src="./images/brand-img4839b.png" alt="brand 4">
-				</a>
+<div id='product-component-38f58f88dee'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'sondoan1204.myshopify.com',
+      apiKey: 'f30a17c50f17ae25a18e4bc122c0487d',
+      appId: '6',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: [11215453331],
+        node: document.getElementById('product-component-38f58f88dee'),
+        moneyFormat: '%7B%7Bamount_no_decimals_with_comma_separator%7D%7D%E2%82%AB',
+        options: {
+  "product": {
+    "variantId": "all",
+    "contents": {
+      "imgWithCarousel": false,
+      "variantTitle": false,
+      "description": false,
+      "buttonWithQuantity": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      }
+    }
+  },
+  "cart": {
+    "contents": {
+      "button": true
+    },
+    "styles": {
+      "footer": {
+        "background-color": "#ffffff"
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "variantTitle": false,
+      "buttonWithQuantity": true,
+      "button": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      }
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  }
+}
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
 			</div>
 			<div class="item">
-				<a href="#">
-					<img src="./images/brand-img5839b.png" alt="brand 5">
-				</a>
-			</div>
-			<div class="item">
-				<a href="#">
-					<img src="./images/brand-img6839b.png" alt="Brand 6">
-				</a>
+<div id='product-component-514094649ab'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'sondoan1204.myshopify.com',
+      apiKey: 'f30a17c50f17ae25a18e4bc122c0487d',
+      appId: '6',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: [11231513299],
+        node: document.getElementById('product-component-514094649ab'),
+        moneyFormat: '%7B%7Bamount_no_decimals_with_comma_separator%7D%7D%E2%82%AB',
+        options: {
+  "product": {
+    "variantId": "all",
+    "contents": {
+      "imgWithCarousel": false,
+      "variantTitle": false,
+      "description": false,
+      "buttonWithQuantity": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      }
+    }
+  },
+  "cart": {
+    "contents": {
+      "button": true
+    },
+    "styles": {
+      "footer": {
+        "background-color": "#ffffff"
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "variantTitle": false,
+      "buttonWithQuantity": true,
+      "button": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      }
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  }
+}
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
 			</div>
 			<div class="item">
 				<a href="#">
@@ -409,6 +703,21 @@
 				</a>
 			</div>
 			<div class="item">
+				<a href="#">
+					<img src="./images/brand-img8839b.png" alt="Brand 8">
+				</a>
+			</div>
+<div class="item">
+				<a href="#">
+					<img src="./images/brand-img8839b.png" alt="Brand 8">
+				</a>
+			</div>
+<div class="item">
+				<a href="#">
+					<img src="./images/brand-img8839b.png" alt="Brand 8">
+				</a>
+			</div>
+<div class="item">
 				<a href="#">
 					<img src="./images/brand-img8839b.png" alt="Brand 8">
 				</a>
