@@ -109,9 +109,9 @@
                                 <h2>Danh mục tin tức</h2>
                             </div>
                             <ul>
-                                <li><a href="https://big-food.bizwebvietnam.net/tin-noi-bat"><span>Tin nổi bật (2)</span></a></li>	
+                                <li><a href="#"><span>Tin nổi bật (2)</span></a></li>	
 
-                                <li><a href="https://big-food.bizwebvietnam.net/tin-tuc"><span>Tin tức (5)</span></a></li>	
+                                <li><a href="#"><span>Tin tức (5)</span></a></li>	
 
                             </ul>
                         </div>
@@ -120,11 +120,11 @@
                                 <h2 title="Thẻ Tags">Thẻ Tags</h2>
                             </div>
                             <ul>
-                                <li><a href="https://big-food.bizwebvietnam.net/tin-tuc/banh-kem" title="banh-kem">Bánh kem</a></li>
-                                <li><a href="https://big-food.bizwebvietnam.net/tin-tuc/banh-pizza" title="banh-pizza">Bánh Pizza</a></li>
-                                <li><a href="https://big-food.bizwebvietnam.net/tin-tuc/hamburger" title="hamburger">Hamburger</a></li>
-                                <li><a href="https://big-food.bizwebvietnam.net/tin-tuc/banh-ngot" title="banh-ngot">Bánh ngọt</a></li>
-                                <li><a href="https://big-food.bizwebvietnam.net/tin-tuc/banh-su-kem" title="banh-su-kem">Bánh su kem</a></li>
+                                <li><a href="#" title="banh-kem">Bánh kem</a></li>
+                                <li><a href="#" title="banh-pizza">Bánh Pizza</a></li>
+                                <li><a href="#" title="hamburger">Hamburger</a></li>
+                                <li><a href="#" title="banh-ngot">Bánh ngọt</a></li>
+                                <li><a href="#" title="banh-su-kem">Bánh su kem</a></li>
                             </ul>
                         </div>
                     </div>
