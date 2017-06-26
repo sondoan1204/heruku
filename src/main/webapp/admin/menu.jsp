@@ -11,9 +11,12 @@
 <html>
     <head>
         <!--<c:set var="root" value="${pageContext.request.contextPath}"/>-->
+<!--        <link href="../admin/popup/styles.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="../admin/popup/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="../admin/popup/notification.js"></script>-->
     </head>
     <body>
-        
+
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">                
@@ -88,7 +91,7 @@
                             <li>
                                 <a href="sanphamkhuyenmai.jsp?pages=1"><span class="glyphicon glyphicon-gift"></span> Sản phẩm Khuyến mãi</a>
                             </li>
-                             <li>
+                            <li>
                                 <a href="sanphamxoa.jsp?pages=1"><span class="glyphicon glyphicon-remove"></span> Sản phẩm đã xoá</a>
                             </li>
                         </ul>
@@ -124,5 +127,7 @@
 
         <!-- Bootstrap Core JavaScript -->
         <script src="../admin/js/bootstrap.min.js"></script>
+        <div id="notification-container"></div>
+        <div id="sound"></div>
     </body>
 </html>

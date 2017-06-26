@@ -29,8 +29,6 @@
         <!-- Custom CSS -->
         <link href="../admin/css/sb-admin.css" rel="stylesheet">
 
-        <!-- Morris Charts CSS -->
-        <link href="../admin/css/plugins/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="../admin/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -116,7 +114,7 @@
                             <td><center><%= formatter.format(product.getProductPrite())%></center></td>
                             <td><center><%=formatter.format(product.getProductPromotionPrice())%></center></td>
                             <td><center><%=product.getProductShortDescription()%></center></td>
-                            <td><center><%=product.getProductImagesFeature()%></center></td>
+                            <td><center><img src="<%=product.getProductImagesFeature()%>" style="width: 135px;height: 135px"></center></td>
                             <td><center><%
                                 if (product.getProductSt() == true) {
                                 %>
@@ -135,7 +133,8 @@
                             <td >
                             <center>
                                 <%if (product.getProductSt() == true) {%>
-                                <a href="../admin/suaproduct.jsp?command=update&ID_Product=<%=product.getProductID()%>">Sửa</a>&nbsp;|
+                                <div class="btn-add-to-cart">
+                                <a href="../admin/suaproduct.jsp?command=update&ID_Product=<%=product.getProductID()%>">Sửa</a></div>&nbsp;|
                                 <a href="../ManagerProductServlet?command=delete&ID_Product=<%=product.getProductID()%>&URL1204=<%=url%>">Xóa</a>
                                 <%} else {%>
                                 <a href="../ManagerProductServlet?command=khoiphuc&ID_Product=<%=product.getProductID()%>&URL1204=<%=url%>">Khôi phục</a>
