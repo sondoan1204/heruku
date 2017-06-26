@@ -93,7 +93,7 @@
                 <div id="page-wrapper">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="ManagerProductServlet" method="post" enctype="multipart/form-data">
+                            <form action="../ManagerProductServlet" method="post" enctype="multipart/form-data">
                                 <div class="panel panel-success" >
                                     <div class="panel-heading">
                                         <h3 class="panel-title"> Thông tin sản phẩm</h3>
