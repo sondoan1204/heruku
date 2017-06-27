@@ -123,12 +123,12 @@
                                                 <input class="btn btn-primary col-md-12 mt10 btn-checkout" type="button" bind-event-click="paymentCheckout()" value="ĐẶT HÀNG" />
 
                                             </div>
-                                                        <div style="text-align: center;" class="form-group clearfix hidden-sm hidden-xs"> ----hoặc---- <br>
+<!--                                                        <div style="text-align: center;" class="form-group clearfix hidden-sm hidden-xs"> ----hoặc---- <br>
                                                             <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-                                                <!-- Identify your business so that you can collect the payments. -->
+                                                 Identify your business so that you can collect the payments. 
                                                 <input type="hidden" name="business" value="sondoan1204@gmail.com">
                                                     <input type="hidden" name="return" value="https://sondoan1204-javatest.herokuapp.com/CheckOutServlet?sontung=online" />
-                                                    <!-- Specify a Buy Now button. -->
+                                                     Specify a Buy Now button. 
                                                     <input type="hidden" name="cmd" value="_xclick">
                                                         <%if (users != null) {%>
                                                         <input type="hidden" name="item_name" value="<%=users.getTen()%>-<%=users.getDT()%>-<%=users.getEmail()%>">
@@ -139,10 +139,102 @@
                                                                     <input type="hidden" name="currency_code" value="USD">
                                                                         <input type="hidden" name="item_number" value="<%=cart.countItem()%>">
                                                                             <INPUT TYPE="hidden" name="charset" value="utf-8">
-                                                                                <!-- Display the payment button. -->
+                                                                                 Display the payment button. 
                                                                                 <input type="image" name="submit" border="0"
                                                                                        src="images/paypal.png" alt="PayPal">
-                                                                                    </form></div>
+                                                                                    </form></div>-->
+                                                                
+<div class="form-group clearfix hidden-sm hidden-xs">                                                                
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+<div id="paypal-button-container"></div>
+
+<div id="confirm">
+    <div>Ship to:</div>
+    <div><span id="recipient"></span>, <span id="line1"></span>, <span id="city"></span></div>
+    <div><span id="state"></span>, <span id="zip"></span>, <span id="country"></span></div>
+
+    <button id="confirmButton">Complete Payment</button>
+</div>
+
+<div id="thanks" class="hidden">
+    Thanks, <span id="thanksname"></span>!
+</div>
+
+<script>
+    paypal.Button.render({
+
+        env: 'sandbox', // sandbox | production
+
+        client: {
+            sandbox:    'Abc7uHxY3yxORSSx_Bbq6MPnjG0iQzTZDaPGaZblemEDZ1tcB7CJi4_sKffXSnogl3BYGCwg5tfs2vja',
+            production: '<insert production client id>'
+        },
+
+        payment: function(data, actions) {
+            return actions.payment.create({
+                transactions: [
+                    {
+                        amount: { total: '<%= (double) Math.round((cart.totalCart() / 22000) * 100) / 100%>', currency: 'USD' },
+                        description: 'Thanh toán PayPal'
+                    }
+                ]
+            });
+        },
+
+        // Wait for the payment to be authorized by the customer
+
+        onAuthorize: function(data, actions) {
+
+            // Get the payment details
+
+            return actions.payment.get().then(function(data) {
+
+                // Display the payment details and a confirmation button
+
+                var shipping = data.payer.payer_info.shipping_address;
+
+                document.querySelector('#recipient').innerText = shipping.recipient_name;
+                document.querySelector('#line1').innerText     = shipping.line1;
+                document.querySelector('#city').innerText      = shipping.city;
+                document.querySelector('#state').innerText     = shipping.state;
+                document.querySelector('#zip').innerText       = shipping.postal_code;
+                document.querySelector('#country').innerText   = shipping.country_code;
+
+                document.querySelector('#paypal-button-container').style.display = 'none';
+                document.querySelector('#confirm').style.display = 'block';
+
+                // Listen for click on confirm button
+
+                document.querySelector('#confirmButton').addEventListener('click', function() {
+
+                    // Disable the button and show a loading message
+
+                    document.querySelector('#confirm').innerText = 'Loading...';
+                    document.querySelector('#confirm').disabled = true;
+
+                    // Execute the payment
+
+                    return actions.payment.execute().then(function() {
+
+                        // Show a thank-you note
+
+                        document.querySelector('#thanksname').innerText = shipping.recipient_name;
+
+                        document.querySelector('#confirm').style.display = 'none';
+                        document.querySelector('#thanks').style.display = 'block';
+                    });
+                });
+            });
+        }
+
+    }, '#paypal-button-container');
+
+</script>
+</div>
+    
+                                                                
+                                                                
                                             <div class="form-group has-error">
                                                 <div class="help-block ">
                                                     <ul class="list-unstyled">
