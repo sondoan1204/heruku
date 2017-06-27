@@ -123,12 +123,12 @@
                                                 <input class="btn btn-primary col-md-12 mt10 btn-checkout" type="button" bind-event-click="paymentCheckout()" value="ĐẶT HÀNG" />
 
                                             </div>
-<!--                                                        <div style="text-align: center;" class="form-group clearfix hidden-sm hidden-xs"> ----hoặc---- <br>
+                                                        <div style="text-align: center;" class="form-group clearfix hidden-sm hidden-xs"> ----hoặc---- <br>
                                                             <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-                                                 Identify your business so that you can collect the payments. 
+                                                 <!--Identify your business so that you can collect the payments.--> 
                                                 <input type="hidden" name="business" value="sondoan1204@gmail.com">
                                                     <input type="hidden" name="return" value="https://sondoan1204-javatest.herokuapp.com/CheckOutServlet?sontung=online" />
-                                                     Specify a Buy Now button. 
+                                                     <!--Specify a Buy Now button.--> 
                                                     <input type="hidden" name="cmd" value="_xclick">
                                                         <%if (users != null) {%>
                                                         <input type="hidden" name="item_name" value="<%=users.getTen()%>-<%=users.getDT()%>-<%=users.getEmail()%>">
@@ -139,13 +139,12 @@
                                                                     <input type="hidden" name="currency_code" value="USD">
                                                                         <input type="hidden" name="item_number" value="<%=cart.countItem()%>">
                                                                             <INPUT TYPE="hidden" name="charset" value="utf-8">
-                                                                                 Display the payment button. 
                                                                                 <input type="image" name="submit" border="0"
                                                                                        src="images/paypal.png" alt="PayPal">
-                                                                                    </form></div>-->
+                                                                                    </form></div>
                                                                 
 <div class="form-group clearfix hidden-sm hidden-xs">                                                                
-<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<!--<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
 <div id="paypal-button-container"></div>
 
@@ -225,6 +224,92 @@
                         document.querySelector('#thanks').style.display = 'block';
                     });
                 });
+            });
+        }
+
+    }, '#paypal-button-container');
+
+</script>-->
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+<p id="msg" class="hidden error">Please check the checkbox</p>
+
+<p>
+    <label><input id="check" type="checkbox"> Check here to continue</label>
+</p>
+
+<div id="paypal-button-container"></div>
+
+<script>
+
+    function isValid() {
+        return document.querySelector('#check').checked;
+    }
+
+    function onChangeCheckbox(handler) {
+        document.querySelector('#check').addEventListener('change', handler);
+    }
+
+    function toggleValidationMessage() {
+        document.querySelector('#msg').style.display = (isValid() ? 'none' : 'block');
+    }
+
+    function toggleButton(actions) {
+        return isValid() ? actions.enable() : actions.disable();
+    }
+
+    // Render the PayPal button
+
+    paypal.Button.render({
+
+        // Set your environment
+
+        env: 'sandbox', // sandbox | production
+
+        // PayPal Client IDs - replace with your own
+        // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+
+        client: {
+            sandbox:    'Abc7uHxY3yxORSSx_Bbq6MPnjG0iQzTZDaPGaZblemEDZ1tcB7CJi4_sKffXSnogl3BYGCwg5tfs2vja',
+            production: '<insert production client id>'
+        },
+
+        validate: function(actions) {
+            toggleButton(actions);
+
+            onChangeCheckbox(function() {
+                toggleButton(actions);
+            });
+        },
+
+        onClick: function() {
+            toggleValidationMessage();
+        },
+
+        // Wait for the PayPal button to be clicked
+
+        payment: function(data, actions) {
+
+            // Make a client-side call to the REST api to create the payment
+
+            return actions.payment.create({
+                transactions: [
+                    {
+                        amount: { total: '<%= (double) Math.round((cart.totalCart() / 22000) * 100) / 100%>', currency: 'USD' },
+                        description: 'Thanh toán PayPal'
+                    }
+                ]
+            });
+        },
+
+        // Wait for the payment to be authorized by the customer
+
+        onAuthorize: function(data, actions) {
+
+            // Execute the payment
+
+            return actions.payment.execute().then(function() {
+                window.alert('Payment Complete! \n Vui lòng ấn Đặt hàng sau đó liên hệ Admin \n Xin lỗi vì bất tiện này');
             });
         }
 
